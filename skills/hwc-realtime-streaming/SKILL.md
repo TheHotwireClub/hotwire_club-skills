@@ -66,7 +66,7 @@ StreamActions.animateCascade = async function() {
 <script>document.querySelector('#dialog').showModal()</script>
 ```
 
-See: `references/realtime-streaming/2023-08-15-turbo-streams-custom-stream-actions.md`
+See: `references/2023-08-15-turbo-streams-custom-stream-actions.md`
 
 ---
 
@@ -106,7 +106,7 @@ document.querySelector('#start').addEventListener('click', () => {
 
 **Key insight**: Turbo automatically executes and removes any `<turbo-stream>` element added to the DOM.
 
-See: `references/realtime-streaming/2023-08-01-turbo-streams-inline-stream-tags.md`
+See: `references/2023-08-01-turbo-streams-inline-stream-tags.md`
 
 ---
 
@@ -147,7 +147,7 @@ Turbo::StreamsChannel.broadcast_append_to(
 Turbo::StreamsChannel.broadcast_refresh_to("dashboard")
 ```
 
-See: `references/realtime-streaming/2024-03-12-hotwire-combobox-with-real-time-data.md`
+See: `references/2024-03-12-hotwire-combobox-with-real-time-data.md`
 
 ---
 
@@ -176,7 +176,7 @@ StreamActions.removeLocalStorage = function() {
 <%= turbo_stream.action "setLocalStorage", key: "current_video", value: @video.id %>
 ```
 
-See: `references/realtime-streaming/2024-01-30-turbo-streams-custom-stream-actions-localstorage.md`
+See: `references/2024-01-30-turbo-streams-custom-stream-actions-localstorage.md`
 
 ---
 
@@ -210,7 +210,7 @@ document.addEventListener('turbo:before-stream-render', (event) => {
 }
 ```
 
-See: `references/realtime-streaming/2025-06-10-turbo-streams-list-animation-view-transitions.md`
+See: `references/2025-06-10-turbo-streams-list-animation-view-transitions.md`
 
 ---
 
@@ -248,7 +248,7 @@ export default class extends Controller {
 
 **Note**: Broadcast Channel API only works for tabs on the same machine, not across devices.
 
-See: `references/realtime-streaming/2023-11-21-stimulus-inter-tab-communication.md`
+See: `references/2023-11-21-stimulus-inter-tab-communication.md`
 
 ---
 
@@ -274,10 +274,10 @@ See: `references/realtime-streaming/2023-11-21-stimulus-inter-tab-communication.
 
 ## Full Article References
 
-- [Turbo Streams - Custom Stream Actions](references/realtime-streaming/2023-08-15-turbo-streams-custom-stream-actions.md)
-- [Turbo Streams - Inline Stream Tags](references/realtime-streaming/2023-08-01-turbo-streams-inline-stream-tags.md)
-- [Turbo Streams - Video Playlist Management](references/realtime-streaming/2023-10-10-turbo-streams-custom-stream-actions-video-playlist-management.md)
-- [Turbo Streams - LocalStorage Integration](references/realtime-streaming/2024-01-30-turbo-streams-custom-stream-actions-localstorage.md)
-- [Turbo Streams - List Animations](references/realtime-streaming/2025-06-10-turbo-streams-list-animation-view-transitions.md)
-- [Hotwire Combobox with Real-Time Data](references/realtime-streaming/2024-03-12-hotwire-combobox-with-real-time-data.md)
-- [Stimulus - Inter-Tab Communication](references/realtime-streaming/2023-11-21-stimulus-inter-tab-communication.md)
+- [Turbo Streams - Custom Stream Actions](references/2023-08-15-turbo-streams-custom-stream-actions.md)
+- [Turbo Streams - Inline Stream Tags](references/2023-08-01-turbo-streams-inline-stream-tags.md)
+- [Turbo Streams - Video Playlist Management](references/2023-10-10-turbo-streams-custom-stream-actions-video-playlist-management.md)
+- [Turbo Streams - LocalStorage Integration](references/2024-01-30-turbo-streams-custom-stream-actions-localstorage.md)
+- [Turbo Streams - List Animations](references/2025-06-10-turbo-streams-list-animation-view-transitions.md)
+- [Hotwire Combobox with Real-Time Data](references/2024-03-12-hotwire-combobox-with-real-time-data.md)
+- [Stimulus - Inter-Tab Communication](references/2023-11-21-stimulus-inter-tab-communication.md)
