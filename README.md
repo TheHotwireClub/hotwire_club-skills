@@ -75,40 +75,51 @@ npx skills remove --agent claude-code hwc-ux-feedback
 ### Manual Installation (Claude Desktop)
 
 1. Clone or download this repository to your local machine
-2. Copy the skill files from `skills/` to your Claude skills directory:
+2. Copy or symlink the skill directories from `skills/` to your Claude skills directory:
    - **macOS**: `~/.claude/skills/`
    - **Windows**: `%USERPROFILE%\.claude\skills\`
    - **Linux**: `~/.claude/skills/`
+
+   Each skill is a directory containing `SKILL.md` and a `references/` folder:
+   ```bash
+   # Example: symlink all skills
+   ln -s /path/to/hotwire_club-skills/skills/hwc-* ~/.claude/skills/
+   ```
 
 3. Restart Claude Desktop
 
 ### For Cursor or Other Editors
 
-Copy the desired `.md` files from the `skills/` directory to your editor's skills directory. Refer to your editor's documentation for the correct location.
+Copy the desired skill directories from `skills/` to your editor's skills directory. Each skill directory contains a `SKILL.md` file and a `references/` folder with full article content. Refer to your editor's documentation for the correct location.
 
 ## Directory Structure
 
 ```
 hotwire_club-skills/
-├── README.md                   # This file
-├── skills/                     # Claude skill files
-│   ├── hwc-ux-feedback.md
-│   ├── hwc-forms-validation.md
-│   ├── hwc-navigation-content.md
-│   ├── hwc-realtime-streaming.md
-│   ├── hwc-media-content.md
-│   └── hwc-stimulus-fundamentals.md
-├── references/                 # Full article content organized by skill
-│   ├── ux-feedback/
-│   ├── forms-validation/
-│   ├── navigation-content/
-│   ├── realtime-streaming/
-│   ├── media-content/
-│   └── stimulus-fundamentals/
+├── README.md                       # This file
+├── skills/                         # Claude skill directories
+│   ├── hwc-ux-feedback/
+│   │   ├── SKILL.md                # Skill definition file
+│   │   └── references/             # Full articles for this skill
+│   ├── hwc-forms-validation/
+│   │   ├── SKILL.md
+│   │   └── references/
+│   ├── hwc-navigation-content/
+│   │   ├── SKILL.md
+│   │   └── references/
+│   ├── hwc-realtime-streaming/
+│   │   ├── SKILL.md
+│   │   └── references/
+│   ├── hwc-media-content/
+│   │   ├── SKILL.md
+│   │   └── references/
+│   └── hwc-stimulus-fundamentals/
+│       ├── SKILL.md
+│       └── references/
 ├── scripts/
-│   └── sync-references.rb      # Script to sync articles from corpus
+│   └── sync-references.rb          # Script to sync articles from corpus
 └── config/
-    └── supertopic-mapping.yml  # Article-to-skill mapping
+    └── supertopic-mapping.yml      # Article-to-skill mapping
 ```
 
 ## Usage
@@ -129,9 +140,9 @@ ruby scripts/sync-references.rb
 ```
 
 This will:
-- Copy the latest articles from `../hotwire_club-mcp/corpus/` to `references/`
+- Copy the latest articles from `../hotwire_club-mcp/corpus/` to each skill's `references/` directory
 - Update the INDEX.md files for each skill
-- Preserve existing skill files (you'll need to manually update them if needed)
+- Preserve existing SKILL.md files (you'll need to manually update them if needed)
 
 ## About Hotwire Club
 
