@@ -1,0 +1,103 @@
+# Supertopic Mapping: Articles → Skills
+# Each skill groups articles by problem domain while indicating Hotwire component context
+
+corpus_path: "../hotwire_club-mcp/corpus"
+
+skills:
+  ux-feedback:
+    name: "ux-feedback"
+    title: "User Experience & Feedback"
+    description: "Implement loading states, progress indicators, optimistic UI, and smooth transitions with Hotwire. Use this skill when building responsive feedback for user actions. (user)"
+    hotwire_focus:
+      - "Turbo Drive"
+      - "Turbo Frames"
+    articles:
+      - 2023-07-18-turbo-drive-progress-bar.md
+      - 2023-06-06-turbo-drive-form-activity-indicators.md
+      - 2023-04-25-turbo-drive-render-interception.md
+      - 2024-11-19-turbo-drive-swiper-view-transitions.md
+      - 2026-01-20-turbo-frames-loading-spinner.md
+      - 2024-03-26-optimistic-ui-with-turbo-8-morphs.md
+      - 2024-08-13-turbo-drive-ulid.md
+
+  forms-validation:
+    name: "forms-validation"
+    title: "Forms & Validation"
+    description: "Handle form submissions, inline editing, real-time validation, and typeahead with Hotwire. Use this skill when building interactive forms. (user)"
+    hotwire_focus:
+      - "Turbo Frames"
+      - "Stimulus"
+    articles:
+      - 2024-02-27-turbo-frames-inline-edit.md
+      - 2024-05-21-turbo-frames-modals-validation.md
+      - 2025-10-20-turbo-frames-typeahead-validation.md
+      - 2026-02-03-turbo-frames-external-form.md
+      - 2023-11-07-turbo-frames-typeahead-search.md
+      - 2024-01-16-stimulus-action-parameters.md
+      - 2024-08-27-turbo-frames-flash.md
+
+  navigation-content:
+    name: "navigation-content"
+    title: "Navigation & Content Display"
+    description: "Build pagination, lazy loading, search, filtering, and tabbed navigation with Hotwire. Use this skill when organizing and displaying content. (user)"
+    hotwire_focus:
+      - "Turbo Drive"
+      - "Turbo Frames"
+    articles:
+      - 2023-05-23-turbo-drive-cache-lifecycle.md
+      - 2024-02-13-turbo-drive-conditional-instant-click.md
+      - 2023-05-09-turbo-drive-custom-rendering.md
+      - 2023-06-20-turbo-frames-tabbed-navigation.md
+      - 2023-07-04-turbo-frames-pagination.md
+      - 2023-09-12-turbo-frames-scroll-position-restoration.md
+      - 2023-09-26-turbo-frames-lazy-loading-lifecycle.md
+      - 2024-12-10-stimulus-turbo-frames-faceted-search.md
+      - 2024-10-08-turbo-frames-markdown-preview.md
+
+  realtime-streaming:
+    name: "realtime-streaming"
+    title: "Real-Time & Streaming"
+    description: "Implement WebSocket updates, live data, custom stream actions, and state synchronization with Hotwire. Use this skill when building real-time features. (user)"
+    hotwire_focus:
+      - "Turbo Streams"
+      - "Stimulus"
+    articles:
+      - 2023-08-01-turbo-streams-inline-stream-tags.md
+      - 2023-08-15-turbo-streams-custom-stream-actions.md
+      - 2023-10-10-turbo-streams-custom-stream-actions-video-playlist-management.md
+      - 2024-01-30-turbo-streams-custom-stream-actions-localstorage.md
+      - 2025-06-10-turbo-streams-list-animation-view-transitions.md
+      - 2024-03-12-hotwire-combobox-with-real-time-data.md
+      - 2023-11-21-stimulus-inter-tab-communication.md
+
+  media-content:
+    name: "media-content"
+    title: "Media & Rich Content"
+    description: "Handle images, video, audio, file uploads, and playback tracking with Hotwire. Use this skill when integrating media and third-party libraries. (user)"
+    hotwire_focus:
+      - "Stimulus"
+      - "Turbo Frames"
+    articles:
+      - 2024-04-23-stimulus-progressive-image-loading-blurhash.md
+      - 2024-06-04-stimulus-picture-in-picture.md
+      - 2024-07-02-stimulus-wavesurfer-add-markers.md
+      - 2024-07-30-stimulus-wavesurfer-remove-markers.md
+      - 2024-09-17-stimulus-image-upload-previews.md
+      - 2024-10-29-stimulus-video-progress-tracker.md
+      - 2024-04-09-turbo-frames-scrolling-lyrics.md
+      - 2025-01-14-turbo-frames-swiper-autoplay.md
+
+  stimulus-fundamentals:
+    name: "stimulus-fundamentals"
+    title: "Stimulus Fundamentals"
+    description: "Master Stimulus controller patterns including lifecycle hooks, value callbacks, outlets, targets, and events. Use this skill when building Stimulus controllers. (user)"
+    hotwire_focus:
+      - "Stimulus"
+    articles:
+      - 2023-08-29-stimulus-value-changed-callbacks.md
+      - 2023-10-24-stimulus-keyboardevent-101.md
+      - 2023-12-05-stimulus-auto-sorting.md
+      - 2023-12-19-stimulus-outlets-api.md
+      - 2024-05-07-stimulus-target-callbacks.md
+      - 2025-11-25-stimulus-web-share-api.md
+      - 2024-06-18-fundamentals-core-web-vitals.md
