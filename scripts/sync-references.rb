@@ -43,7 +43,7 @@ class SyncReferences
   end
 
   def run
-    puts "Starting sync from #{@corpus_path} to references/\n\n"
+    puts "Starting sync from #{@corpus_path} to skill references/\n\n"
     
     @skills.each do |skill_key, skill_data|
       sync_skill(skill_key, skill_data)
@@ -55,10 +55,11 @@ class SyncReferences
   private
 
   def sync_skill(skill_key, skill_data)
-    puts "Syncing #{skill_key} (#{skill_data['title']})..."
+    skill_dir_name = "hwc-#{skill_key}"
+    puts "Syncing #{skill_dir_name} (#{skill_data['title']})..."
     
-    # Create references subdirectory for this skill
-    skill_ref_dir = Pathname.new("references/#{skill_key}")
+    # Create references subdirectory inside the skill directory
+    skill_ref_dir = Pathname.new("skills/#{skill_dir_name}/references")
     FileUtils.mkdir_p(skill_ref_dir)
 
     # Copy each article to the references directory
