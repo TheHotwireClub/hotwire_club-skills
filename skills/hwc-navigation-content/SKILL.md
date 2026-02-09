@@ -57,7 +57,7 @@ document.addEventListener('turbo:click', (e) => {
 });
 ```
 
-See: `references/navigation-content/2023-06-20-turbo-frames-tabbed-navigation.md`
+See: `references/2023-06-20-turbo-frames-tabbed-navigation.md`
 
 ---
 
@@ -120,7 +120,7 @@ paginationLink.addEventListener('click', () => {
 });
 ```
 
-See: `references/navigation-content/2023-07-04-turbo-frames-pagination.md`
+See: `references/2023-07-04-turbo-frames-pagination.md`
 
 ---
 
@@ -168,7 +168,7 @@ export default class extends Controller {
 }
 ```
 
-See: `references/navigation-content/2023-09-26-turbo-frames-lazy-loading-lifecycle.md`
+See: `references/2023-09-26-turbo-frames-lazy-loading-lifecycle.md`
 
 ---
 
@@ -192,7 +192,7 @@ document.addEventListener('turbo:render', () => {
 });
 ```
 
-See: `references/navigation-content/2023-09-12-turbo-frames-scroll-position-restoration.md`
+See: `references/2023-09-12-turbo-frames-scroll-position-restoration.md`
 
 ---
 
@@ -224,7 +224,7 @@ document.addEventListener('turbo:before-cache', () => {
 // They'll show briefly on back navigation!
 ```
 
-See: `references/navigation-content/2023-05-23-turbo-drive-cache-lifecycle.md`
+See: `references/2023-05-23-turbo-drive-cache-lifecycle.md`
 
 ---
 
@@ -256,7 +256,7 @@ export default class extends Controller {
 }
 ```
 
-See: `references/navigation-content/2024-12-10-stimulus-turbo-frames-faceted-search.md`
+See: `references/2024-12-10-stimulus-turbo-frames-faceted-search.md`
 
 ---
 
@@ -271,12 +271,12 @@ See: `references/navigation-content/2024-12-10-stimulus-turbo-frames-faceted-sea
 
 ## Full Article References
 
-- [Turbo Frames - Tabbed Navigation](references/navigation-content/2023-06-20-turbo-frames-tabbed-navigation.md)
-- [Turbo Frames - Pagination](references/navigation-content/2023-07-04-turbo-frames-pagination.md)
-- [Turbo Frames - Lazy Loading Lifecycle](references/navigation-content/2023-09-26-turbo-frames-lazy-loading-lifecycle.md)
-- [Turbo Frames - Scroll Position Restoration](references/navigation-content/2023-09-12-turbo-frames-scroll-position-restoration.md)
-- [Turbo Drive - Cache Lifecycle](references/navigation-content/2023-05-23-turbo-drive-cache-lifecycle.md)
-- [Turbo Drive - Custom Rendering](references/navigation-content/2023-05-09-turbo-drive-custom-rendering.md)
-- [Turbo Drive - Conditional Instant Click](references/navigation-content/2024-02-13-turbo-drive-conditional-instant-click.md)
-- [Faceted Search with Stimulus](references/navigation-content/2024-12-10-stimulus-turbo-frames-faceted-search.md)
-- [Turbo Frames - Markdown Preview](references/navigation-content/2024-10-08-turbo-frames-markdown-preview.md)
+- [Turbo Frames - Tabbed Navigation](references/2023-06-20-turbo-frames-tabbed-navigation.md)
+- [Turbo Frames - Pagination](references/2023-07-04-turbo-frames-pagination.md)
+- [Turbo Frames - Lazy Loading Lifecycle](references/2023-09-26-turbo-frames-lazy-loading-lifecycle.md)
+- [Turbo Frames - Scroll Position Restoration](references/2023-09-12-turbo-frames-scroll-position-restoration.md)
+- [Turbo Drive - Cache Lifecycle](references/2023-05-23-turbo-drive-cache-lifecycle.md)
+- [Turbo Drive - Custom Rendering](references/2023-05-09-turbo-drive-custom-rendering.md)
+- [Turbo Drive - Conditional Instant Click](references/2024-02-13-turbo-drive-conditional-instant-click.md)
+- [Faceted Search with Stimulus](references/2024-12-10-stimulus-turbo-frames-faceted-search.md)
+- [Turbo Frames - Markdown Preview](references/2024-10-08-turbo-frames-markdown-preview.md)
