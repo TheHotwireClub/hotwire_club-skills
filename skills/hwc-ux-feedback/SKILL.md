@@ -87,7 +87,7 @@ turbo-frame[busy] {
 }
 ```
 
-See: `references/ux-feedback/2026-01-20-turbo-frames-loading-spinner.md`
+See: `references/2026-01-20-turbo-frames-loading-spinner.md`
 
 ---
 
@@ -146,7 +146,7 @@ button.addEventListener('click', () => {
 });
 ```
 
-See: `references/ux-feedback/2024-03-26-optimistic-ui-with-turbo-8-morphs.md`
+See: `references/2024-03-26-optimistic-ui-with-turbo-8-morphs.md`
 
 ---
 
@@ -193,7 +193,7 @@ const customBar = document.createElement('div');
 // ... lots of custom CSS and positioning
 ```
 
-See: `references/ux-feedback/2023-07-18-turbo-drive-progress-bar.md`
+See: `references/2023-07-18-turbo-drive-progress-bar.md`
 
 ---
 
@@ -233,7 +233,7 @@ document.addEventListener('turbo:before-render', (event) => {
 });
 ```
 
-See: `references/ux-feedback/2023-04-25-turbo-drive-render-interception.md`
+See: `references/2023-04-25-turbo-drive-render-interception.md`
 
 ---
 
@@ -264,7 +264,7 @@ form.submitting [type="submit"] {
 }
 ```
 
-See: `references/ux-feedback/2023-06-06-turbo-drive-form-activity-indicators.md`
+See: `references/2023-06-06-turbo-drive-form-activity-indicators.md`
 
 ---
 
@@ -279,10 +279,10 @@ See: `references/ux-feedback/2023-06-06-turbo-drive-form-activity-indicators.md`
 
 ## Full Article References
 
-- [Turbo Frames - Loading Spinner](references/ux-feedback/2026-01-20-turbo-frames-loading-spinner.md)
-- [Optimistic UI with Turbo 8 Morphs](references/ux-feedback/2024-03-26-optimistic-ui-with-turbo-8-morphs.md)
-- [Turbo Drive - Progress Bar](references/ux-feedback/2023-07-18-turbo-drive-progress-bar.md)
-- [Turbo Drive - Render Interception](references/ux-feedback/2023-04-25-turbo-drive-render-interception.md)
-- [Turbo Drive - Form Activity Indicators](references/ux-feedback/2023-06-06-turbo-drive-form-activity-indicators.md)
-- [Turbo Drive - Swiper View Transitions](references/ux-feedback/2024-11-19-turbo-drive-swiper-view-transitions.md)
-- [Turbo Drive - ULIDs for Optimistic UI](references/ux-feedback/2024-08-13-turbo-drive-ulid.md)
+- [Turbo Frames - Loading Spinner](references/2026-01-20-turbo-frames-loading-spinner.md)
+- [Optimistic UI with Turbo 8 Morphs](references/2024-03-26-optimistic-ui-with-turbo-8-morphs.md)
+- [Turbo Drive - Progress Bar](references/2023-07-18-turbo-drive-progress-bar.md)
+- [Turbo Drive - Render Interception](references/2023-04-25-turbo-drive-render-interception.md)
+- [Turbo Drive - Form Activity Indicators](references/2023-06-06-turbo-drive-form-activity-indicators.md)
+- [Turbo Drive - Swiper View Transitions](references/2024-11-19-turbo-drive-swiper-view-transitions.md)
+- [Turbo Drive - ULIDs for Optimistic UI](references/2024-08-13-turbo-drive-ulid.md)
