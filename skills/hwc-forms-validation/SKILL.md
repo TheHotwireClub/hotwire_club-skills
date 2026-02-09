@@ -63,7 +63,7 @@ You are an expert in Hotwire form patterns. Help developers build interactive fo
 </turbo-frame>
 ```
 
-See: `references/forms-validation/2026-02-03-turbo-frames-external-form.md`
+See: `references/2026-02-03-turbo-frames-external-form.md`
 
 ---
 
@@ -129,7 +129,7 @@ end
 </dialog>
 ```
 
-See: `references/forms-validation/2024-05-21-turbo-frames-modals-validation.md`
+See: `references/2024-05-21-turbo-frames-modals-validation.md`
 
 ---
 
@@ -179,7 +179,7 @@ document.addEventListener('turbo:frame-render', () => {
 });
 ```
 
-See: `references/forms-validation/2024-02-27-turbo-frames-inline-edit.md`
+See: `references/2024-02-27-turbo-frames-inline-edit.md`
 
 ---
 
@@ -225,7 +225,7 @@ export default class extends Controller {
 </form>
 ```
 
-See: `references/forms-validation/2023-11-07-turbo-frames-typeahead-search.md`
+See: `references/2023-11-07-turbo-frames-typeahead-search.md`
 
 ---
 
@@ -247,7 +247,7 @@ document.addEventListener('turbo:submit-end', async (e) => {
 });
 ```
 
-See: `references/forms-validation/2024-08-27-turbo-frames-flash.md`
+See: `references/2024-08-27-turbo-frames-flash.md`
 
 ---
 
@@ -269,10 +269,10 @@ See: `references/forms-validation/2024-08-27-turbo-frames-flash.md`
 
 ## Full Article References
 
-- [Turbo Frames - External Forms](references/forms-validation/2026-02-03-turbo-frames-external-form.md)
-- [Turbo Frames - Modals with Validation](references/forms-validation/2024-05-21-turbo-frames-modals-validation.md)
-- [Turbo Frames - Inline Edit](references/forms-validation/2024-02-27-turbo-frames-inline-edit.md)
-- [Turbo Frames - Typeahead Search](references/forms-validation/2023-11-07-turbo-frames-typeahead-search.md)
-- [Turbo Frames - Typeahead Validation](references/forms-validation/2025-10-20-turbo-frames-typeahead-validation.md)
-- [Turbo Frames - Flash Messages](references/forms-validation/2024-08-27-turbo-frames-flash.md)
-- [Stimulus - Action Parameters](references/forms-validation/2024-01-16-stimulus-action-parameters.md)
+- [Turbo Frames - External Forms](references/2026-02-03-turbo-frames-external-form.md)
+- [Turbo Frames - Modals with Validation](references/2024-05-21-turbo-frames-modals-validation.md)
+- [Turbo Frames - Inline Edit](references/2024-02-27-turbo-frames-inline-edit.md)
+- [Turbo Frames - Typeahead Search](references/2023-11-07-turbo-frames-typeahead-search.md)
+- [Turbo Frames - Typeahead Validation](references/2025-10-20-turbo-frames-typeahead-validation.md)
+- [Turbo Frames - Flash Messages](references/2024-08-27-turbo-frames-flash.md)
+- [Stimulus - Action Parameters](references/2024-01-16-stimulus-action-parameters.md)
