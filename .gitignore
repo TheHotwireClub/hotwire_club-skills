@@ -1,0 +1,11 @@
+# Emacs backup files
+*~
+\#*\#
+.#*
+*.~undo-tree~
+
+# macOS
+.DS_Store
+
+# Ruby
+.ruby-lsp/
