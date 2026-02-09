@@ -73,7 +73,7 @@ preview(event) {
 }
 ```
 
-See: `references/media-content/2024-09-17-stimulus-image-upload-previews.md`
+See: `references/2024-09-17-stimulus-image-upload-previews.md`
 
 ---
 
@@ -126,7 +126,7 @@ export default class extends Controller {
 
 **Note**: Picture-in-Picture requires user interaction with the video first and is not supported in Firefox.
 
-See: `references/media-content/2024-06-04-stimulus-picture-in-picture.md`
+See: `references/2024-06-04-stimulus-picture-in-picture.md`
 
 ---
 
@@ -164,7 +164,7 @@ export default class extends Controller {
 }
 ```
 
-See: `references/media-content/2024-10-29-stimulus-video-progress-tracker.md`
+See: `references/2024-10-29-stimulus-video-progress-tracker.md`
 
 ---
 
@@ -212,7 +212,7 @@ export default class extends Controller {
 }
 ```
 
-See: `references/media-content/2024-04-23-stimulus-progressive-image-loading-blurhash.md`
+See: `references/2024-04-23-stimulus-progressive-image-loading-blurhash.md`
 
 ---
 
@@ -265,7 +265,7 @@ export default class extends Controller {
 
 **Key insight**: Use Stimulus value changed callbacks to keep third-party library state in sync.
 
-See: `references/media-content/2024-07-02-stimulus-wavesurfer-add-markers.md`
+See: `references/2024-07-02-stimulus-wavesurfer-add-markers.md`
 
 ---
 
@@ -304,7 +304,7 @@ export default class extends Controller {
 }
 ```
 
-See: `references/media-content/2024-04-09-turbo-frames-scrolling-lyrics.md`
+See: `references/2024-04-09-turbo-frames-scrolling-lyrics.md`
 
 ---
 
@@ -319,11 +319,11 @@ See: `references/media-content/2024-04-09-turbo-frames-scrolling-lyrics.md`
 
 ## Full Article References
 
-- [Stimulus - Image Upload Previews](references/media-content/2024-09-17-stimulus-image-upload-previews.md)
-- [Stimulus - Picture in Picture](references/media-content/2024-06-04-stimulus-picture-in-picture.md)
-- [Stimulus - Video Progress Tracker](references/media-content/2024-10-29-stimulus-video-progress-tracker.md)
-- [Stimulus - Progressive Image Loading](references/media-content/2024-04-23-stimulus-progressive-image-loading-blurhash.md)
-- [Stimulus - Wavesurfer Add Markers](references/media-content/2024-07-02-stimulus-wavesurfer-add-markers.md)
-- [Stimulus - Wavesurfer Remove Markers](references/media-content/2024-07-30-stimulus-wavesurfer-remove-markers.md)
-- [Turbo Frames - Scrolling Lyrics](references/media-content/2024-04-09-turbo-frames-scrolling-lyrics.md)
-- [Turbo Frames - Swiper Autoplay](references/media-content/2025-01-14-turbo-frames-swiper-autoplay.md)
+- [Stimulus - Image Upload Previews](references/2024-09-17-stimulus-image-upload-previews.md)
+- [Stimulus - Picture in Picture](references/2024-06-04-stimulus-picture-in-picture.md)
+- [Stimulus - Video Progress Tracker](references/2024-10-29-stimulus-video-progress-tracker.md)
+- [Stimulus - Progressive Image Loading](references/2024-04-23-stimulus-progressive-image-loading-blurhash.md)
+- [Stimulus - Wavesurfer Add Markers](references/2024-07-02-stimulus-wavesurfer-add-markers.md)
+- [Stimulus - Wavesurfer Remove Markers](references/2024-07-30-stimulus-wavesurfer-remove-markers.md)
+- [Turbo Frames - Scrolling Lyrics](references/2024-04-09-turbo-frames-scrolling-lyrics.md)
+- [Turbo Frames - Swiper Autoplay](references/2025-01-14-turbo-frames-swiper-autoplay.md)
