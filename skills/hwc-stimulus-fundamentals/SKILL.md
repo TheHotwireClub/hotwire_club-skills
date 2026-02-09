@@ -63,7 +63,7 @@ dataValueChanged() {
 }
 ```
 
-See: `references/stimulus-fundamentals/2023-08-29-stimulus-value-changed-callbacks.md`
+See: `references/2023-08-29-stimulus-value-changed-callbacks.md`
 
 ---
 
@@ -144,7 +144,7 @@ const otherController = this.application
   .getControllerForElementAndIdentifier(element, 'other'); // Private!
 ```
 
-See: `references/stimulus-fundamentals/2023-12-19-stimulus-outlets-api.md`
+See: `references/2023-12-19-stimulus-outlets-api.md`
 
 ---
 
@@ -173,7 +173,7 @@ export default class extends Controller {
 }
 ```
 
-See: `references/stimulus-fundamentals/2024-05-07-stimulus-target-callbacks.md`
+See: `references/2024-05-07-stimulus-target-callbacks.md`
 
 ---
 
@@ -213,7 +213,7 @@ export default class extends Controller {
 **Supported modifiers**: `ctrl`, `alt`, `shift`, `meta`  
 **Supported keys**: `enter`, `tab`, `esc`, `space`, `up`, `down`, `left`, `right`, plus letter/number keys
 
-See: `references/stimulus-fundamentals/2023-10-24-stimulus-keyboardevent-101.md`
+See: `references/2023-10-24-stimulus-keyboardevent-101.md`
 
 ---
 
@@ -258,7 +258,7 @@ open(event) {
 }
 ```
 
-See: `references/stimulus-fundamentals/2024-01-16-stimulus-action-parameters.md`
+See: `references/2024-01-16-stimulus-action-parameters.md`
 
 ---
 
@@ -294,7 +294,7 @@ export default class extends Controller {
 }
 ```
 
-See: `references/stimulus-fundamentals/2023-12-05-stimulus-auto-sorting.md`
+See: `references/2023-12-05-stimulus-auto-sorting.md`
 
 ---
 
@@ -346,7 +346,7 @@ export default class extends Controller {
 
 **Note**: Web Share API is not supported in Firefox desktop.
 
-See: `references/stimulus-fundamentals/2025-11-25-stimulus-web-share-api.md`
+See: `references/2025-11-25-stimulus-web-share-api.md`
 
 ---
 
@@ -384,11 +384,11 @@ export default class extends Controller {
 
 ## Full Article References
 
-- [Stimulus - Value Changed Callbacks](references/stimulus-fundamentals/2023-08-29-stimulus-value-changed-callbacks.md)
-- [Stimulus - Outlets API](references/stimulus-fundamentals/2023-12-19-stimulus-outlets-api.md)
-- [Stimulus - Target Callbacks](references/stimulus-fundamentals/2024-05-07-stimulus-target-callbacks.md)
-- [Stimulus - KeyboardEvent 101](references/stimulus-fundamentals/2023-10-24-stimulus-keyboardevent-101.md)
-- [Stimulus - Action Parameters](references/stimulus-fundamentals/2024-01-16-stimulus-action-parameters.md)
-- [Stimulus - Auto-Sorting with MutationObserver](references/stimulus-fundamentals/2023-12-05-stimulus-auto-sorting.md)
-- [Stimulus - Web Share API](references/stimulus-fundamentals/2025-11-25-stimulus-web-share-api.md)
-- [Core Web Vitals Optimization](references/stimulus-fundamentals/2024-06-18-fundamentals-core-web-vitals.md)
+- [Stimulus - Value Changed Callbacks](references/2023-08-29-stimulus-value-changed-callbacks.md)
+- [Stimulus - Outlets API](references/2023-12-19-stimulus-outlets-api.md)
+- [Stimulus - Target Callbacks](references/2024-05-07-stimulus-target-callbacks.md)
+- [Stimulus - KeyboardEvent 101](references/2023-10-24-stimulus-keyboardevent-101.md)
+- [Stimulus - Action Parameters](references/2024-01-16-stimulus-action-parameters.md)
+- [Stimulus - Auto-Sorting with MutationObserver](references/2023-12-05-stimulus-auto-sorting.md)
+- [Stimulus - Web Share API](references/2025-11-25-stimulus-web-share-api.md)
+- [Core Web Vitals Optimization](references/2024-06-18-fundamentals-core-web-vitals.md)
