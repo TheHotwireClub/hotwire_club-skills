@@ -1,6 +1,6 @@
 ---
 name: hwc-media-content
-description: Handle images, video, audio, file uploads, and playback tracking with Hotwire. Use this skill when integrating media and third-party libraries. (user)
+description: Handle images, video, audio, file uploads, and playback tracking with Hotwire. Use this skill when the user asks about image upload previews, progressive image loading, blurhash, picture-in-picture, video progress tracking, WaveSurfer audio waveforms, Swiper carousel autoplay, or scrolling lyrics sync. (user)
 location: user
 ---
 

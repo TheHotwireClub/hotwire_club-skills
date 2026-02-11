@@ -1,6 +1,6 @@
 ---
 name: hwc-stimulus-fundamentals
-description: Master Stimulus controller patterns including lifecycle hooks, value callbacks, outlets, targets, and events. Use this skill when building Stimulus controllers. (user)
+description: Master Stimulus controller patterns including lifecycle hooks, value callbacks, outlets, targets, and events. Use this skill when the user asks about Stimulus value callbacks, target callbacks, outlets API, keyboard events, auto-sorting, Web Share API, Core Web Vitals, or general Stimulus controller patterns. (user)
 location: user
 ---
 

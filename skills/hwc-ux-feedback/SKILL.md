@@ -1,6 +1,6 @@
 ---
 name: hwc-ux-feedback
-description: Implement loading states, progress indicators, optimistic UI, and smooth transitions with Hotwire. Use this skill when building responsive feedback for user actions. (user)
+description: Implement loading states, progress indicators, optimistic UI, and smooth transitions with Hotwire. Use this skill when the user asks about loading spinners, progress bars, Turbo Frame busy states, optimistic UI, view transitions, page transition animations, form activity indicators, or render interception. (user)
 location: user
 ---
 
