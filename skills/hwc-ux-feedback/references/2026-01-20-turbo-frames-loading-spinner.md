@@ -1,11 +1,17 @@
 ---
-layout: post
 title: Turbo Frames - Loading Spinner
-description: Display a loading spinner while a Turbo Frame is `busy` fetching content asynchronously
 date: 2026-01-20
-authors: ["Julian Rubisch"]
-categories: ["Turbo Frames"]
-tags: ["Lazy Loading", "busy attribute", "MutationObserver", "stimulus-use", "CSS", "template", "UX"]
+categories:
+- Turbo Frames
+tags:
+- Lazy Loading
+- busy attribute
+- MutationObserver
+- stimulus-use
+- CSS
+- template
+- UX
+description: Display a loading spinner while a Turbo Frame is `busy` fetching content asynchronously
 free: false
 ready: true
 ---

@@ -1,16 +1,17 @@
 ---
-layout: post
 title: Turbo Frames - Using External Forms
-description: Refer to external forms from within a Turbo Frame
 date: 2026-02-03
-authors: ["Julian Rubisch"]
-categories: ["Turbo Frames"]
-tags: ["Form Submission", "forms", "form attribute", "turbo-frame", "external form controls"]
+categories:
+- Turbo Frames
+tags:
+- Form Submission
+- forms
+- form attribute
+- turbo-frame
+- external form controls
+description: Refer to external forms from within a Turbo Frame
 free: false
 ready: true
-
-meta_title: Turbo Frames - Using External Forms
-meta_description: Refer to external forms from within a Turbo Frame
 ---
 
 ## Table of Contents
