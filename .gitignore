@@ -9,3 +9,6 @@
 
 # Ruby
 .ruby-lsp/
+
+# Local agent workspace artifacts
+.agent-shell/
