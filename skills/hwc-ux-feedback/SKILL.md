@@ -1,6 +1,6 @@
 ---
 name: hwc-ux-feedback
-description: Implement loading states, progress indicators, optimistic UI, and smooth transitions with Hotwire. Use this skill when the user asks about loading spinners, progress bars, Turbo Frame busy states, optimistic UI, view transitions, page transition animations, form activity indicators, or render interception.
+description: Implement cross-cutting Hotwire UX feedback patterns: loading states, busy indicators, progress bars, optimistic UI, render interception, and view/page transitions. Prefer this skill when the core goal is perceived performance and user feedback, independent of a single feature domain. Use hwc-forms-validation for form correctness and validation behavior, hwc-navigation-content for navigation/history/cache mechanics, hwc-realtime-streaming for push/stream orchestration, hwc-media-content for media-specific behavior, and hwc-stimulus-fundamentals for base Stimulus API questions.
 ---
 
 # User Experience & Feedback

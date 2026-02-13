@@ -1,6 +1,6 @@
 ---
 name: hwc-forms-validation
-description: Handle form submissions, inline editing, real-time validation, and typeahead with Hotwire. Use this skill when the user asks about inline editing, form validation, typeahead search, autocomplete, modal forms, flash messages in Turbo Frames, external form controls, or Stimulus action parameters.
+description: Handle Hotwire form workflows: form submission lifecycle, inline editing, validation errors, typeahead/autocomplete, modal forms, frame-scoped flash updates, and external form controls. Prefer this skill when the core problem is correctness and UX of form interaction. Use hwc-navigation-content for pagination/tabs/filter navigation, hwc-realtime-streaming for WebSocket/Turbo Stream broadcasting, hwc-media-content for image/video/audio behavior, hwc-ux-feedback for generic loading/transition polish, and hwc-stimulus-fundamentals for framework-level Stimulus APIs not tied to forms.
 ---
 
 # Forms & Validation

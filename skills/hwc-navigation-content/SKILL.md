@@ -1,6 +1,6 @@
 ---
 name: hwc-navigation-content
-description: Build pagination, lazy loading, search, filtering, and tabbed navigation with Hotwire. Use this skill when the user asks about Turbo Frame pagination, lazy loading, tabbed navigation, scroll position restoration, faceted search, instant click, Turbo cache lifecycle, or markdown preview.
+description: Build Hotwire navigation and content-discovery flows: Turbo Frame pagination, tabbed navigation, lazy loading, faceted filtering/search, cache lifecycle, scroll restoration, and visit/render control. Prefer this skill when the core problem is request/response navigation state and browser history behavior. Use hwc-forms-validation for form validation and inline edit flows, hwc-realtime-streaming for WebSocket/Turbo Stream push updates, hwc-media-content for image/video/audio features, hwc-ux-feedback for generic loading/progress/transition polish, and hwc-stimulus-fundamentals for Stimulus APIs not centered on navigation.
 ---
 
 # Navigation & Content Display

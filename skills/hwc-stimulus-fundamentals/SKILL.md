@@ -1,6 +1,6 @@
 ---
 name: hwc-stimulus-fundamentals
-description: Master Stimulus controller patterns including lifecycle hooks, value callbacks, outlets, targets, and events. Use this skill when the user asks about Stimulus value callbacks, target callbacks, outlets API, keyboard events, auto-sorting, Web Share API, Core Web Vitals, or general Stimulus controller patterns.
+description: Cover Stimulus controller fundamentals: lifecycle hooks, values and valueChanged callbacks, targets and target callbacks, outlets, action parameters, keyboard events, and controller architecture patterns. Prefer this skill when the request is primarily about Stimulus APIs and controller design independent of a specific Hotwire domain. Use hwc-forms-validation for form-specific workflows, hwc-navigation-content for Turbo navigation concerns, hwc-realtime-streaming for Turbo Streams/WebSocket patterns, hwc-media-content for media integrations, and hwc-ux-feedback for loading/progress/transition UX patterns.
 ---
 
 # Stimulus Fundamentals

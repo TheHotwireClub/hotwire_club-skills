@@ -1,6 +1,6 @@
 ---
 name: hwc-realtime-streaming
-description: Implement WebSocket updates, live data, custom stream actions, and state synchronization with Hotwire. Use this skill when the user asks about Turbo Streams, custom stream actions, WebSocket updates, real-time data, inline stream tags, localStorage sync, list animations, inter-tab communication, or hotwire_combobox with live data.
+description: Implement real-time Hotwire behavior: Turbo Streams over WebSocket/SSE, custom stream actions, inline stream tags, live list updates, and cross-tab state synchronization. Prefer this skill when the core problem is push-based updates or stream action orchestration. Use hwc-navigation-content for pull-based pagination/tab/lazy-navigation flows, hwc-forms-validation for form lifecycle and validation, hwc-media-content for media upload/playback behavior, hwc-ux-feedback for generic loading/progress/transitions, and hwc-stimulus-fundamentals for non-stream Stimulus fundamentals.
 ---
 
 # Real-Time & Streaming
