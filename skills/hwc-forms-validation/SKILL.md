@@ -1,7 +1,6 @@
 ---
 name: hwc-forms-validation
-description: Handle form submissions, inline editing, real-time validation, and typeahead with Hotwire. Use this skill when the user asks about inline editing, form validation, typeahead search, autocomplete, modal forms, flash messages in Turbo Frames, external form controls, or Stimulus action parameters. (user)
-location: user
+description: Handle form submissions, inline editing, real-time validation, and typeahead with Hotwire. Use this skill when the user asks about inline editing, form validation, typeahead search, autocomplete, modal forms, flash messages in Turbo Frames, external form controls, or Stimulus action parameters.
 ---
 
 # Forms & Validation

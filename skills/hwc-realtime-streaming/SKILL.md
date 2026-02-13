@@ -1,7 +1,6 @@
 ---
 name: hwc-realtime-streaming
-description: Implement WebSocket updates, live data, custom stream actions, and state synchronization with Hotwire. Use this skill when the user asks about Turbo Streams, custom stream actions, WebSocket updates, real-time data, inline stream tags, localStorage sync, list animations, inter-tab communication, or hotwire_combobox with live data. (user)
-location: user
+description: Implement WebSocket updates, live data, custom stream actions, and state synchronization with Hotwire. Use this skill when the user asks about Turbo Streams, custom stream actions, WebSocket updates, real-time data, inline stream tags, localStorage sync, list animations, inter-tab communication, or hotwire_combobox with live data.
 ---
 
 # Real-Time & Streaming

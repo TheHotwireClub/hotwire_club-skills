@@ -1,7 +1,6 @@
 ---
 name: hwc-navigation-content
-description: Build pagination, lazy loading, search, filtering, and tabbed navigation with Hotwire. Use this skill when the user asks about Turbo Frame pagination, lazy loading, tabbed navigation, scroll position restoration, faceted search, instant click, Turbo cache lifecycle, or markdown preview. (user)
-location: user
+description: Build pagination, lazy loading, search, filtering, and tabbed navigation with Hotwire. Use this skill when the user asks about Turbo Frame pagination, lazy loading, tabbed navigation, scroll position restoration, faceted search, instant click, Turbo cache lifecycle, or markdown preview.
 ---
 
 # Navigation & Content Display
