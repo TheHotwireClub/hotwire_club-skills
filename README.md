@@ -80,7 +80,7 @@ npx skills remove --agent claude-code hwc-ux-feedback
    - **Windows**: `%USERPROFILE%\.claude\skills\`
    - **Linux**: `~/.claude/skills/`
 
-   Each skill is a directory containing `SKILL.md` and a `references/` folder:
+   Each skill is a directory containing `SKILL.md`, `agents/openai.yaml`, and a `references/` folder:
    ```bash
    # Example: symlink all skills
    ln -s /path/to/hotwire_club-skills/skills/hwc-* ~/.claude/skills/
@@ -90,7 +90,7 @@ npx skills remove --agent claude-code hwc-ux-feedback
 
 ### For Cursor or Other Editors
 
-Copy the desired skill directories from `skills/` to your editor's skills directory. Each skill directory contains a `SKILL.md` file and a `references/` folder with full article content. Refer to your editor's documentation for the correct location.
+Copy the desired skill directories from `skills/` to your editor's skills directory. Each skill directory contains `SKILL.md`, `agents/openai.yaml`, and a `references/` folder with full article content. Refer to your editor's documentation for the correct location.
 
 ## Directory Structure
 
@@ -100,21 +100,33 @@ hotwire_club-skills/
 ├── skills/                         # Claude skill directories
 │   ├── hwc-ux-feedback/
 │   │   ├── SKILL.md                # Skill definition file
+│   │   ├── agents/
+│   │   │   └── openai.yaml         # UI metadata (display name/default prompt)
 │   │   └── references/             # Full articles for this skill
 │   ├── hwc-forms-validation/
 │   │   ├── SKILL.md
+│   │   ├── agents/
+│   │   │   └── openai.yaml
 │   │   └── references/
 │   ├── hwc-navigation-content/
 │   │   ├── SKILL.md
+│   │   ├── agents/
+│   │   │   └── openai.yaml
 │   │   └── references/
 │   ├── hwc-realtime-streaming/
 │   │   ├── SKILL.md
+│   │   ├── agents/
+│   │   │   └── openai.yaml
 │   │   └── references/
 │   ├── hwc-media-content/
 │   │   ├── SKILL.md
+│   │   ├── agents/
+│   │   │   └── openai.yaml
 │   │   └── references/
 │   └── hwc-stimulus-fundamentals/
 │       ├── SKILL.md
+│       ├── agents/
+│       │   └── openai.yaml
 │       └── references/
 ├── scripts/
 │   └── sync-references.rb          # Script to sync articles from corpus
@@ -142,7 +154,17 @@ ruby scripts/sync-references.rb
 This will:
 - Copy the latest articles from `../hotwire_club-mcp/corpus/` to each skill's `references/` directory
 - Update the INDEX.md files for each skill
-- Preserve existing SKILL.md files (you'll need to manually update them if needed)
+- Preserve existing `SKILL.md` and `agents/openai.yaml` files
+
+After syncing, run the maintenance checklist to keep structure consistent:
+
+1. Keep `SKILL.md` lean (workflow + guardrails + selective reference loading), with frontmatter containing only `name` and `description`.
+2. Keep full examples in `references/*.md` and ensure long references (>100 lines) include `## Table of Contents`.
+3. Keep `agents/openai.yaml` present for each skill with `display_name`, `short_description`, and `default_prompt`.
+4. Remove stale references to deleted/unsupported articles.
+5. Validate no backup artifacts were introduced (`*~`, `.*undo-tree*`).
+
+See `AGENTS.md` for the full repository maintenance workflow.
 
 ## About Hotwire Club
 
