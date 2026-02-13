@@ -1,5 +1,9 @@
 # Hotwire Club Skills
 
+> [!IMPORTANT]
+> If you'd like to support these efforts consider becoming a paying Patreon member ❤️ You'll even get access to up to date lessons and other perks:
+> [patreon.com/TheHotwireClub](https://www.patreon.com/TheHotwireClub)
+
 Claude skills for building modern web applications with [Hotwire](https://hotwired.dev/) (Turbo and Stimulus).
 
 These skills are extracted from the [Hotwire Club](https://hotwire.club/) knowledge base and organized into 6 topic-based skills covering common patterns and best practices.
