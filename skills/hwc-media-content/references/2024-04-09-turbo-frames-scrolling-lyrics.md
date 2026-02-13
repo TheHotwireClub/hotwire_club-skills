@@ -13,6 +13,18 @@ ready: true
 free: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [HTML Structure](#html-structure)
+  - [Rails Controller](#rails-controller)
+  - [JavaScript Implementation](#javascript-implementation)
+  - [Optimization](#optimization)
+  - [View Transitions](#view-transitions)
+- [Pattern Card: Time-Sensitive Content (Scrolling Lyrics)](#pattern-card-time-sensitive-content-scrolling-lyrics)
+
+
 ## Overview
 
 Turbo Frames can exchange content dynamically using their `src` attribute. This technique demonstrates updating Turbo Frame content in a time-sensitive manner, such as when a video's timecode changes.

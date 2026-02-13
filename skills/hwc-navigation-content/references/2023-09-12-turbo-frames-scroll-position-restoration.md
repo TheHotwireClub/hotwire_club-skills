@@ -17,6 +17,13 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Problem](#problem)
+- [Solution](#solution)
+- [Stimulus Controller Implementation](#stimulus-controller-implementation)
+- [Pattern Card: Scroll Position Restoration](#pattern-card-scroll-position-restoration)
+
 ## Problem
 
 When navigating with Turbo Frames and using browser back/forward navigation, the scroll position resets to the top of the page instead of restoring the previous scroll position. This occurs because Turbo Drive's scroll position restoration doesn't always work correctly with Turbo Frame navigation.

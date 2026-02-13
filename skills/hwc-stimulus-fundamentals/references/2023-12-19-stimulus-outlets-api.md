@@ -12,6 +12,17 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Example: Background Job Dashboard](#example-background-job-dashboard)
+- [Implementation](#implementation)
+  - [JobDashboardController](#jobdashboardcontroller)
+  - [JobController](#jobcontroller)
+  - [WidgetController](#widgetcontroller)
+- [Pattern Card: Outlets API (Inter-Controller Communication)](#pattern-card-outlets-api-inter-controller-communication)
+
+
 ## Overview
 
 The Stimulus Outlets API provides a public way to enable inter-controller communication. Previously, developers had to use the private `getControllerForElementAndIdentifier` API, which was discouraged. The [Outlets API](https://stimulus.hotwired.dev/reference/outlets) offers a clean, supported approach to pass data between controllers.

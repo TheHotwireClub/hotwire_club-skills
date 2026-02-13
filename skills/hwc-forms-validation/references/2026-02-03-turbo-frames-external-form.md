@@ -13,6 +13,18 @@ meta_title: Turbo Frames - Using External Forms
 meta_description: Refer to external forms from within a Turbo Frame
 ---
 
+## Table of Contents
+
+- [Problem](#problem)
+- [Solution](#solution)
+- [Implementation](#implementation)
+- [HTML Structure](#html-structure)
+- [Form Control Inside Turbo Frame](#form-control-inside-turbo-frame)
+- [Rails Controller](#rails-controller)
+- [Rails View (results.html.erb)](#rails-view-resultshtmlerb)
+- [Key Points](#key-points)
+- [Pattern Card: External Form Controls](#pattern-card-external-form-controls)
+
 ## Problem
 
 When a form exists outside a `<turbo-frame>`, form controls (like `<select>`, `<input>`) rendered inside the frame cannot submit to that external form by default. Form controls are only associated with their nearest ancestor `<form>` element.

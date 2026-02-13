@@ -14,6 +14,20 @@ description: Use Stimulus value callbacks to interact with a wavesurfer element 
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [Controller Structure](#controller-structure)
+  - [HTML Markup](#html-markup)
+- [Key Concepts](#key-concepts)
+  - [Managing Play State with Stimulus Values](#managing-play-state-with-stimulus-values)
+  - [Adding Markers via Value Callbacks](#adding-markers-via-value-callbacks)
+  - [Updating UI via Third-Party Library Events](#updating-ui-via-third-party-library-events)
+  - [State Management Considerations](#state-management-considerations)
+- [Pattern Card: Third-Party Library Integration (Wavesurfer)](#pattern-card-third-party-library-integration-wavesurfer)
+
+
 ## Overview
 
 Integrating Wavesurfer audio visualization library with Stimulus using its internal event system and Stimulus values. This demonstrates how to manage state in Stimulus controllers when wrapping third-party libraries.

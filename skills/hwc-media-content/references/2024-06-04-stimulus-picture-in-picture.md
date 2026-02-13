@@ -13,6 +13,16 @@ ready: true
 description: Use an IntersectionObserver to trigger a Picture in Picture overlay
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [Stimulus Controller](#stimulus-controller)
+  - [HTML Markup](#html-markup)
+- [Important Considerations](#important-considerations)
+- [Pattern Card: Picture-in-Picture Video](#pattern-card-picture-in-picture-video)
+
+
 ## Overview
 
 The Picture-in-Picture API allows creating floating windows from any `<video>` element. This implementation uses Stimulus with the `useIntersection` mixin from Stimulus Use to automatically trigger Picture-in-Picture mode when a video element scrolls out of the viewport.

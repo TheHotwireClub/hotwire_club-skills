@@ -12,6 +12,22 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Turbo Progress Bar API](#turbo-progress-bar-api)
+- [Programmatic Control](#programmatic-control)
+- [Example: WebSocket Integration](#example-websocket-integration)
+- [Rails Implementation with ActionCable](#rails-implementation-with-actioncable)
+  - [ActionCable Channel](#actioncable-channel)
+  - [Controller Action](#controller-action)
+  - [Background Job](#background-job)
+  - [JavaScript with ActionCable](#javascript-with-actioncable)
+- [Dynamic Enable/Disable](#dynamic-enabledisable)
+- [Considerations](#considerations)
+- [Pattern Card: Custom Progress Bar for Long Operations](#pattern-card-custom-progress-bar-for-long-operations)
+
+
 ## Overview
 Turbo Drive includes a progress bar displayed at the top of the browser window. By default, it appears when a Turbo Drive visit exceeds a specific timeout. The progress bar can be programmatically controlled for custom use cases.
 

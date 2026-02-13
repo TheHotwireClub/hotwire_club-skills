@@ -15,6 +15,15 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+- [Code Example](#code-example)
+- [Key Points](#key-points)
+- [Pattern Card: Form Activity Indicators](#pattern-card-form-activity-indicators)
+
+
 ## Overview
 
 Turbo Drive emits several events during form submission that can be used to display activity indicators and manage form state. The key events are `turbo:submit-start`, `turbo:submit-end`, and `turbo:before-render`.

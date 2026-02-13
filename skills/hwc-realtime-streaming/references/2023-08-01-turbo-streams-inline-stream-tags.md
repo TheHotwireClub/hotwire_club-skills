@@ -14,6 +14,16 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [Constructing the Turbo Stream Tag](#constructing-the-turbo-stream-tag)
+  - [Cloning and Inserting Template Content](#cloning-and-inserting-template-content)
+- [Key Points](#key-points)
+- [Pattern Card: Inline Stream Tags (Client-Side)](#pattern-card-inline-stream-tags-client-side)
+
+
 ## Overview
 
 Turbo will parse and execute any `<turbo-stream>` element that is added to the DOM at any time, not just from WebSocket, SSE, or form submissions. This enables using Turbo Streams in pure client-side scenarios for optimistic UI updates and microinteractions.

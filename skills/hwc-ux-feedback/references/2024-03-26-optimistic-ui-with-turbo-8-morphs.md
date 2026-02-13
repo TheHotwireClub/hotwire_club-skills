@@ -14,6 +14,18 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [HTML Structure](#html-structure)
+  - [Rails Controller](#rails-controller)
+  - [JavaScript Event Listener](#javascript-event-listener)
+  - [Reconciliation with Turbo 8 Morphs](#reconciliation-with-turbo-8-morphs)
+- [Important Notes](#important-notes)
+- [Pattern Card: Optimistic UI with Turbo 8 Morphs](#pattern-card-optimistic-ui-with-turbo-8-morphs)
+
+
 ## Overview
 
 Server-side rendering with Turbo reduces complexity but introduces latency. Network round-trips plus server processing time can exceed 100ms, making interactions feel sluggish. Optimistic UI updates the interface immediately based on expected outcomes, then reconciles with server state using Turbo 8 morphs.

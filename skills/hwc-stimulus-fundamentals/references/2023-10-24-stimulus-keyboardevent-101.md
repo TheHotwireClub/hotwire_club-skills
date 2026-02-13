@@ -15,6 +15,20 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [Keyboard Actions](#keyboard-actions)
+  - [Example: Dynamic Form Input Management](#example-dynamic-form-input-management)
+- [Key Concepts](#key-concepts)
+  - [Modifying Input Type with Value Callbacks](#modifying-input-type-with-value-callbacks)
+  - [Adding/Removing Inputs](#addingremoving-inputs)
+  - [Validation Rules](#validation-rules)
+- [Important Notes](#important-notes)
+- [Pattern Card: KeyboardEvent Handling](#pattern-card-keyboardevent-handling)
+
+
 ## Overview
 
 Stimulus provides native [KeyboardEvent filter functionality](https://stimulus.hotwired.dev/reference/actions#keyboardevent-filter) for handling keyboard shortcuts, eliminating the need for third-party libraries for basic use cases.

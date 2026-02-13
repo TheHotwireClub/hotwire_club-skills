@@ -16,6 +16,19 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+- [Solution](#solution)
+- [Code Examples](#code-examples)
+  - [JavaScript Implementation](#javascript-implementation)
+  - [HTML Structure](#html-structure)
+  - [Page Content with Pagination](#page-content-with-pagination)
+- [Key Points](#key-points)
+- [Pattern Card: Pagination with Browser History](#pattern-card-pagination-with-browser-history)
+
+
 ## Overview
 
 Pagination with Turbo Frames is a special case of tabbed navigation. Turbo Frames provide a performant way to switch between "windows" of a dataset. The pagination itself is kept inside the frame, allowing server-side rendering of the active page state.

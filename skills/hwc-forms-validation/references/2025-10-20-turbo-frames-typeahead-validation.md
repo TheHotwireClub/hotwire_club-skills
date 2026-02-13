@@ -12,6 +12,19 @@ free: false
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [Rails Controller](#rails-controller)
+  - [Rails View Template](#rails-view-template)
+  - [Main View](#main-view)
+  - [JavaScript Implementation](#javascript-implementation)
+- [How It Works](#how-it-works)
+- [Alternative: Using Idiomorph](#alternative-using-idiomorph)
+- [Notes](#notes)
+
+
 ## Overview
 
 Typeahead validation validates user input in real time using Turbo Frames form submission. The challenge is preserving input focus and caret position during frame updates to maintain a smooth user experience.

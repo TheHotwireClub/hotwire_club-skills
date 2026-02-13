@@ -14,6 +14,17 @@ ready: true
 description: Smartly use image lazy loading to improve core web vitals such as LCP and CLS
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Key Principles](#key-principles)
+- [Implementation](#implementation)
+  - [Inline Script for Above-the-Fold Images](#inline-script-for-above-the-fold-images)
+  - [Preconnect for Image Domains](#preconnect-for-image-domains)
+  - [Complete HTML Example](#complete-html-example)
+- [Important Considerations for Turbo](#important-considerations-for-turbo)
+
+
 ## Overview
 
 Core Web Vitals measure real-world user experience. This document covers optimizing Largest Contentful Paint (LCP) and Cumulative Layout Shift (CLS) through proper image lazy loading, which is critical for Turbo-driven applications.

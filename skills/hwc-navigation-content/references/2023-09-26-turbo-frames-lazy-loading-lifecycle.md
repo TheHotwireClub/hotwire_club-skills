@@ -16,6 +16,17 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Example: Tracking Loaded Frames in Navigation](#example-tracking-loaded-frames-in-navigation)
+- [Implementation](#implementation)
+  - [Markup](#markup)
+  - [Stimulus Controller](#stimulus-controller)
+- [Key Concepts](#key-concepts)
+- [Pattern Card: Lazy Loading Frames](#pattern-card-lazy-loading-frames)
+
+
 ## Overview
 
 Turbo Frames can be lazily loaded using the `loading="lazy"` attribute, which triggers loading via IntersectionObserver. The `turbo:frame-load` event fires when a lazy-loaded frame finishes loading, allowing you to trigger custom interactions using Stimulus.

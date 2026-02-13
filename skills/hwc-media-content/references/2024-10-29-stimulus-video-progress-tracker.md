@@ -11,6 +11,15 @@ free: false
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+- [Code Example](#code-example)
+- [Key Points](#key-points)
+- [Pattern Card: Video Progress Tracking](#pattern-card-video-progress-tracking)
+
+
 ## Overview
 
 Client-side `localStorage` provides a simpler alternative to server-side sessions for storing ephemeral user state like video playback progress. This avoids server-side complexity of serialization and rehydration.

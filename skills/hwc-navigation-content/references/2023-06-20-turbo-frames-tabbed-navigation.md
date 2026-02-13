@@ -15,6 +15,16 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Active Tab Styling with turbo:frame-load](#active-tab-styling-with-turboframe-load)
+- [HTML Structure](#html-structure)
+- [Browser History Support](#browser-history-support)
+- [Implementation Notes](#implementation-notes)
+- [Pattern Card: Tabbed Navigation](#pattern-card-tabbed-navigation)
+
+
 ## Overview
 Turbo Frames are well-suited for tabbed navigation. Two common challenges are:
 1. Updating the active tab styling without Turbo Streams

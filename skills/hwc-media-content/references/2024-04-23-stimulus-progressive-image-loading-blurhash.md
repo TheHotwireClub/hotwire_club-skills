@@ -14,6 +14,16 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [HTML Structure](#html-structure)
+  - [Stimulus Controller](#stimulus-controller)
+- [Key Points](#key-points)
+- [Pattern Card: Progressive Image Loading (Blurhash)](#pattern-card-progressive-image-loading-blurhash)
+
+
 ## Overview
 
 Blurhashes provide a way to improve Largest Contentful Paint (LCP) and prevent layout shift when lazy loading images. Using Stimulus, we can create a progressive image loading experience that displays a blurhash placeholder while the actual image loads.

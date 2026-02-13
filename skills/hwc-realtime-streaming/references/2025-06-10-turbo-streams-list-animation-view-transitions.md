@@ -14,6 +14,20 @@ ready: true
 description: Create list animations using Turbo Streams and the View Transitions API
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [JavaScript](#javascript)
+  - [CSS](#css)
+  - [Rails Controller](#rails-controller)
+  - [Rails View Template](#rails-view-template)
+  - [Rails Partial](#rails-partial)
+  - [Turbo Stream Template](#turbo-stream-template)
+- [Important Notes](#important-notes)
+- [Pattern Card: List Animations with View Transitions](#pattern-card-list-animations-with-view-transitions)
+
+
 ## Overview
 
 The View Transitions API can be used with Turbo Streams to animate list items when they are appended via `<turbo-stream action="append">`. This is useful for implementing smooth animations when loading more items into a list.

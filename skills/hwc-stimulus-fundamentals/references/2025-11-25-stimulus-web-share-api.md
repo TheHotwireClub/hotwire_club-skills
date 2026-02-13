@@ -11,6 +11,15 @@ ready: true
 description: Use the native browser web sharing capabilities from Stimulus
 ---
 
+## Table of Contents
+
+- [Implementation](#implementation)
+  - [HTML Example](#html-example)
+  - [Stimulus Controller](#stimulus-controller)
+- [Key Points](#key-points)
+- [Pattern Card: Web Share API](#pattern-card-web-share-api)
+
+
 The Web Share API allows sharing text, files, and URLs using native browser capabilities. Firefox does not support this API.
 
 ## Implementation

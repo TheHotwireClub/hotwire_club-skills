@@ -12,6 +12,15 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Value Changed Callbacks](#value-changed-callbacks)
+- [Implementation Example](#implementation-example)
+- [Key Points](#key-points)
+- [Pattern Card: Value Changed Callbacks](#pattern-card-value-changed-callbacks)
+
+
 ## Overview
 
 Stimulus value changed callbacks enable reactive updates when integrating third-party libraries. When a Stimulus value changes, Stimulus automatically calls a method named `{valueName}ValueChanged()`.

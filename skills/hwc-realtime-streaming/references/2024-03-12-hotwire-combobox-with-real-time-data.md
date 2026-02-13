@@ -16,6 +16,16 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [Basic WebSocket Approach](#basic-websocket-approach)
+  - [Stimulus Controller with Outlets](#stimulus-controller-with-outlets)
+- [Key Points](#key-points)
+- [Pattern Card: WebSocket Broadcasts with ActionCable](#pattern-card-websocket-broadcasts-with-actioncable)
+
+
 ## Overview
 
 Hotwire Combobox supports async mode where options are loaded via Turbo Stream actions. This pattern extends the combobox to receive real-time updates through WebSockets, updating options dynamically as data changes.

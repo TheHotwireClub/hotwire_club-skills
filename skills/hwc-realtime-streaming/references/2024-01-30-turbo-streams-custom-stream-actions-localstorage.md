@@ -14,6 +14,19 @@ description: Store ephemeral state changes locally using localStorage and custom
 free: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [Custom Stream Action](#custom-stream-action)
+  - [Invoking the Action](#invoking-the-action)
+  - [Restoring State on Page Load](#restoring-state-on-page-load)
+  - [Preventing UI Flicker](#preventing-ui-flicker)
+- [Complete Example](#complete-example)
+- [Key Points](#key-points)
+- [Pattern Card: LocalStorage with Custom Stream Actions](#pattern-card-localstorage-with-custom-stream-actions)
+
+
 ## Overview
 
 Use custom Turbo Stream actions with localStorage to persist ephemeral state across page reloads. This technique stores the current video ID in localStorage and restores it on page load.

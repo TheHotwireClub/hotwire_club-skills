@@ -10,6 +10,16 @@ free: false
 ready: true
 ---
 
+## Table of Contents
+
+- [Problem](#problem)
+- [Starting Point](#starting-point)
+- [Solution 1: JavaScript with MutationObserver](#solution-1-javascript-with-mutationobserver)
+- [HTML](#html)
+- [Stimulus Controller](#stimulus-controller)
+- [Solution 2: CSS Only](#solution-2-css-only)
+- [Pattern Card: Loading Spinner for Turbo Frames](#pattern-card-loading-spinner-for-turbo-frames)
+
 ## Problem
 
 Asynchronously loading content via Turbo Frames doesn't advertise its `busy` status, causing the frame to become unresponsive without user feedback.

@@ -13,6 +13,16 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Problem](#problem)
+- [Solution](#solution)
+- [Implementation Details](#implementation-details)
+- [Key Points](#key-points)
+- [Pattern Card: MutationObserver for Auto-Sorting](#pattern-card-mutationobserver-for-auto-sorting)
+
+
 ## Overview
 
 When Turbo Stream messages arrive out of order via WebSocket (common in multi-process or multi-server environments), a Stimulus controller can use a MutationObserver to automatically sort them by timestamp.

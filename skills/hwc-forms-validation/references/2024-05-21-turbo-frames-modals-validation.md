@@ -15,6 +15,16 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Problem](#problem)
+- [Solution](#solution)
+- [Handling Successful Submissions](#handling-successful-submissions)
+- [Rails Controller Implementation](#rails-controller-implementation)
+- [Pattern Card: Modal Forms with Validation](#pattern-card-modal-forms-with-validation)
+
+
 ## Overview
 
 Handle modal dialogs with Turbo Frames and validation. The `<dialog>` element provides standardized modal functionality. When using forms inside dialogs with Turbo, wrap the form in a Turbo Frame to capture validation errors, and use `turbo:submit-end` to handle successful submissions.

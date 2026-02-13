@@ -13,6 +13,16 @@ ready: true
 description: Create client-side previews of files using URL.createObjectURL
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [HTML Structure](#html-structure)
+  - [Stimulus Controller](#stimulus-controller)
+- [Key Concepts](#key-concepts)
+- [Pattern Card: Image Upload Previews](#pattern-card-image-upload-previews)
+
+
 ## Overview
 
 Display image previews before upload starts using JavaScript blob URLs created with `URL.createObjectURL`. This provides immediate visual feedback when users select files.

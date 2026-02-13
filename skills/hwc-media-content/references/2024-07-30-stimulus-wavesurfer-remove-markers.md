@@ -13,6 +13,19 @@ description: Use Stimulus value callbacks to interact with a wavesurfer element 
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [Action Handler](#action-handler)
+  - [Value Callback](#value-callback)
+  - [Wavesurfer Integration](#wavesurfer-integration)
+  - [Event Handling](#event-handling)
+- [Complete Controller](#complete-controller)
+- [HTML Template](#html-template)
+- [Key Concepts](#key-concepts)
+
+
 ## Overview
 
 This demonstrates how to remove markers from a Wavesurfer.js element using Stimulus value callbacks and action parameters. The implementation uses Stimulus values as the source of truth while interfacing with a third-party library that manages its own state.

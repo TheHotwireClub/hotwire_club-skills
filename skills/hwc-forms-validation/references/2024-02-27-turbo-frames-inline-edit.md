@@ -17,6 +17,16 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [Form Structure](#form-structure)
+  - [Event Handling](#event-handling)
+  - [State Persistence](#state-persistence)
+- [Pattern Card: Inline Editing](#pattern-card-inline-editing)
+
+
 ## Overview
 
 Inline editing with Turbo Frames allows users to edit content directly in place. The pattern uses Turbo Frames to swap between a display view (link) and an edit view (form), with state persistence via cookies.

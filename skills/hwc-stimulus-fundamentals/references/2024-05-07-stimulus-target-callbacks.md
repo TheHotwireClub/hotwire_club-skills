@@ -15,6 +15,20 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [HTML Structure](#html-structure)
+  - [Stimulus Controller](#stimulus-controller)
+  - [How It Works](#how-it-works)
+- [Rails/Turbo Stream Integration](#railsturbo-stream-integration)
+  - [Server-Side Broadcasting](#server-side-broadcasting)
+  - [Job Partial](#job-partial)
+  - [View Setup](#view-setup)
+- [Pattern Card: Target Callbacks](#pattern-card-target-callbacks)
+
+
 ## Overview
 
 Stimulus target callbacks allow controllers to react when targets are connected or disconnected from the DOM. This is useful for updating UI based on DOM state without requiring server-side state management.

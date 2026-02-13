@@ -13,6 +13,20 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [Stimulus Controller](#stimulus-controller)
+  - [HTML Template](#html-template)
+- [Key Concepts](#key-concepts)
+  - [Channel Setup](#channel-setup)
+  - [Sending Messages](#sending-messages)
+  - [Receiving Messages](#receiving-messages)
+  - [Declarative State Management](#declarative-state-management)
+- [Pattern Card: Inter-Tab Communication](#pattern-card-inter-tab-communication)
+
+
 ## Overview
 
 The Broadcast Channel API enables communication between browser tabs or windows on the same machine without WebSockets. It's useful for sending low-importance notifications and synchronizing state across tabs.

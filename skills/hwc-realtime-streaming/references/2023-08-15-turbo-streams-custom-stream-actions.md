@@ -12,6 +12,17 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Custom Action Implementation](#custom-action-implementation)
+  - [Basic Custom Action](#basic-custom-action)
+  - [Sequential Animations with Async/Await](#sequential-animations-with-asyncawait)
+  - [Client-Side Stream Execution](#client-side-stream-execution)
+- [Rails Integration](#rails-integration)
+- [Pattern Card: Custom Stream Actions](#pattern-card-custom-stream-actions)
+
+
 ## Overview
 
 Turbo Streams provide 7 default actions (append, prepend, replace, update, remove, before, after) that handle most reactivity needs. When these become verbose or insufficient, Turbo allows implementing custom stream actions to orchestrate complex UI behaviors and animations.

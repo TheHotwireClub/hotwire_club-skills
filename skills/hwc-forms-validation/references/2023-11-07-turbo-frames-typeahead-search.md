@@ -15,6 +15,17 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [Filtering and Updating the Results Frame](#filtering-and-updating-the-results-frame)
+  - [Highlighting the Query in the Results](#highlighting-the-query-in-the-results)
+- [Important Notes](#important-notes)
+- [Code Example](#code-example)
+- [Pattern Card: Typeahead Search](#pattern-card-typeahead-search)
+
+
 ## Overview
 Turbo Frames enable view decomposition, making it easy to update parts of a view reactively to user input. Typeahead search is a common use case where a Turbo Frame displays filtered results based on user input.
 

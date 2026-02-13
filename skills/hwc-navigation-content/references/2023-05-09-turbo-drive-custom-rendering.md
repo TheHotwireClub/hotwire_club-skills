@@ -14,6 +14,14 @@ description: Completely customize Turbo Drive's rendering process.
 free: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+- [Example: Image Transition with Navigation Swap](#example-image-transition-with-navigation-swap)
+- [Important Considerations](#important-considerations)
+
+
 ## Overview
 
 Turbo Drive exposes a `render` method that can be overwritten in the `turbo:before-render` event. Using the current and new body element, you can provide a custom transition between pages.

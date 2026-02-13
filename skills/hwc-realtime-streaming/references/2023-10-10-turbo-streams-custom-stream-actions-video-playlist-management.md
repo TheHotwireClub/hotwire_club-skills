@@ -16,6 +16,24 @@ ready: true
 
 This pattern demonstrates managing a video playlist using custom Turbo Stream actions orchestrated through custom events. The implementation uses three decoupled custom stream actions to handle video exchange, playlist control updates, and playing indicator management.
 
+## Table of Contents
+
+- [Custom Stream Actions](#custom-stream-actions)
+- [1. exchangeVideo Action](#1-exchangevideo-action)
+- [2. managePlaylistControls Action](#2-manageplaylistcontrols-action)
+- [3. managePlayingIndicator Action](#3-manageplayingindicator-action)
+- [Event Orchestration](#event-orchestration)
+- [Button Click Handler](#button-click-handler)
+- [videochange Event Listener](#videochange-event-listener)
+- [videochanged Event Listener](#videochanged-event-listener)
+- [HTML Structure](#html-structure)
+- [Rails Usage](#rails-usage)
+- [Controller Action](#controller-action)
+- [Turbo Stream Template](#turbo-stream-template)
+- [Using turbo_stream_action_tag Helper](#using-turbo_stream_action_tag-helper)
+- [Form Submission](#form-submission)
+- [Key Points](#key-points)
+
 ## Custom Stream Actions
 
 Three custom stream actions are defined to handle different aspects of playlist management:

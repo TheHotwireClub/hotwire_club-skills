@@ -14,6 +14,16 @@ ready: true
 description: Create an autoplaying swiper using view transitions and Turbo Frames
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [HTML Structure](#html-structure)
+  - [Server-Side Implementation](#server-side-implementation)
+  - [JavaScript Implementation](#javascript-implementation)
+- [Key Points](#key-points)
+
+
 ## Overview
 
 Create an autoplaying image swiper embedded in a Turbo Frame using the View Transitions API. Unlike full page navigations, Turbo Frame navigations don't automatically trigger view transitions, so `document.startViewTransition` must be used manually.

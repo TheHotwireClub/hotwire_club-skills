@@ -12,6 +12,18 @@ ready: true
 description: Use Stimulus and Turbo Frames to implement faceted search with multiple filter criteria
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [HTML Structure](#html-structure)
+  - [Stimulus Controller](#stimulus-controller)
+  - [Rails Controller](#rails-controller)
+  - [Rails View Template](#rails-view-template)
+- [Key Concepts](#key-concepts)
+- [Pattern Card: Faceted Search](#pattern-card-faceted-search)
+
+
 ## Overview
 
 Faceted search allows users to filter results using multiple criteria simultaneously. This implementation uses a Stimulus controller to collect form data and update a Turbo Frame's source URL with query parameters.

@@ -10,6 +10,16 @@ free: true
 ready: true
 ---
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Implementation](#implementation)
+  - [HTML/ERB Template](#htmlerb-template)
+  - [Stimulus Controller](#stimulus-controller)
+  - [Server-Side Persistence](#server-side-persistence)
+- [Pattern Card: Action Parameters](#pattern-card-action-parameters)
+
+
 ## Overview
 
 Stimulus action parameters provide an officially sanctioned way to pass contextual information to Stimulus actions declaratively through DOM data attributes, eliminating the need for manual wiring of data attributes.
