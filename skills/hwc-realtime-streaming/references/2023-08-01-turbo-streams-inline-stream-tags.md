@@ -84,3 +84,40 @@ document.querySelector('#start-button').addEventListener('click', (event) => {
 - Template elements prevent immediate execution until cloned
 - The stream element can be appended anywhere in the document; Turbo will execute it and remove it
 - This technique is useful for optimistic UI patterns and client-side microinteractions
+
+
+## Pattern Card: Inline Stream Tags (Client-Side)
+
+**When to use**: Optimistic UI updates or microinteractions without server communication.
+
+**GOOD - Template-based client-side streams**:
+
+```html
+<template id="progress-stream">
+  <turbo-stream action="replace" target="progress-bar">
+    <template>
+      <progress id="progress-bar" value="0" max="100"></progress>
+    </template>
+  </turbo-stream>
+</template>
+
+<button id="start">Start</button>
+<progress id="progress-bar" value="0" max="100"></progress>
+```
+
+```javascript
+document.querySelector('#start').addEventListener('click', () => {
+  let value = 0;
+  const interval = setInterval(() => {
+    if (value >= 100) return clearInterval(interval);
+    
+    value += 5;
+    const clone = document.querySelector('#progress-stream')
+      .content.cloneNode(true);
+    clone.querySelector('progress').value = value;
+    document.body.appendChild(clone); // Turbo executes and removes it
+  }, 100);
+});
+```
+
+**Key insight**: Turbo automatically executes and removes any `<turbo-stream>` element added to the DOM.

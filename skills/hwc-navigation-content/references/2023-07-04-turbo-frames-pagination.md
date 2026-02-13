@@ -123,3 +123,63 @@ document.addEventListener('turbo:frame-load', (event) => {
 3. **History Replacement**: The `turbo:frame-load` event handler uses `Turbo.navigator.history.replace()` to replace the history entry with the query parameter format (`?page=A|B|C`), ensuring the page is reloadable and maintains the correct URL structure.
 
 4. **API Note**: `Turbo.navigator.history` is exposed on the global `Turbo` object but is not part of the official public API. Use with caution in production.
+
+
+## Pattern Card: Pagination with Browser History
+
+**When to use**: Navigate through pages of data with working back/forward buttons.
+
+**GOOD - Frame pagination with URL rewriting**:
+
+```html
+<turbo-frame id="paginated-content">
+  <table>
+    <!-- Data rows -->
+  </table>
+  <nav>
+    <a href="/?page=1" data-turbo-action="advance">1</a>
+    <a href="/?page=2" data-turbo-action="advance">2</a>
+    <a href="/?page=3" data-turbo-action="advance">3</a>
+  </nav>
+</turbo-frame>
+```
+
+```javascript
+// On page load, set frame src from query param
+document.addEventListener('DOMContentLoaded', () => {
+  const page = new URL(location.href).searchParams.get('page');
+  if (page) {
+    document.querySelector('turbo-frame').src = `/pages/${page}`;
+  }
+});
+
+// Rewrite URL before fetch
+document.addEventListener('turbo:before-fetch-request', (event) => {
+  const page = new URL(event.detail.url).searchParams.get('page');
+  if (page) {
+    event.preventDefault();
+    event.detail.url.pathname = `/pages/${page}`;
+    event.detail.url.search = '';
+    event.detail.resume();
+  }
+});
+
+// Replace history entry with clean URL
+document.addEventListener('turbo:frame-load', (event) => {
+  const match = event.target.src.match(/pages\/(\d+)/);
+  if (match) {
+    const url = new URL(location.href);
+    url.search = `page=${match[1]}`;
+    Turbo.navigator.history.replace(url);
+  }
+});
+```
+
+**BAD - Manual pushState (breaks Turbo's restoration)**:
+
+```javascript
+// Don't implement pushState manually
+paginationLink.addEventListener('click', () => {
+  history.pushState({}, '', `/?page=${page}`); // Breaks Turbo!
+});
+```

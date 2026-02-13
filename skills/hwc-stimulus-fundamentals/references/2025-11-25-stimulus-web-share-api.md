@@ -80,3 +80,52 @@ export default class extends Controller {
 - Feature detection via `navigator.canShare()` should be performed in the `connect()` callback to hide the share element if sharing is not supported.
 - The file extension is extracted from the blob's content type to construct the filename.
 - `navigator.share()` is called in a Stimulus action triggered on click.
+
+
+## Pattern Card: Web Share API
+
+**When to use**: Native share dialogs on mobile and supported browsers.
+
+**GOOD - Feature detection with graceful fallback**:
+
+```html
+<div data-controller="share"
+     data-share-title-value="Check this out"
+     data-share-url-value="https://example.com">
+  <button data-action="click->share#share" 
+          data-share-target="button"
+          class="hidden">
+    Share
+  </button>
+</div>
+```
+
+```javascript
+export default class extends Controller {
+  static targets = ['button'];
+  static values = { title: String, text: String, url: String };
+
+  connect() {
+    // Only show button if Web Share is supported
+    if (navigator.canShare?.({ url: this.urlValue })) {
+      this.buttonTarget.classList.remove('hidden');
+    }
+  }
+
+  async share() {
+    try {
+      await navigator.share({
+        title: this.titleValue,
+        text: this.textValue,
+        url: this.urlValue
+      });
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        console.error('Share failed:', err);
+      }
+    }
+  }
+}
+```
+
+**Note**: Web Share API is not supported in Firefox desktop.

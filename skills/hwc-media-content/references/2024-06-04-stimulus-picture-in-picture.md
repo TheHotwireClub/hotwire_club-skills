@@ -104,3 +104,53 @@ The video element uses:
 ## Important Considerations
 
 The Picture-in-Picture API requires a user interaction with the `<video>` element before it can be requested (a "user trusted event"). This requirement applies each time Picture-in-Picture is closed and reopened. The video must be playing for Picture-in-Picture to work.
+
+
+## Pattern Card: Picture-in-Picture Video
+
+**When to use**: Keep video playing in a floating window when scrolled out of view.
+
+**GOOD - IntersectionObserver with stimulus-use**:
+
+```html
+<video controls data-controller="pip"
+       data-action="enterpictureinpicture->pip#showIndicator 
+                    leavepictureinpicture->pip#hideIndicator">
+  <source src="/video.mp4" type="video/mp4">
+</video>
+
+<div id="pip-indicator" class="hidden">PiP Active</div>
+```
+
+```javascript
+import { Controller } from '@hotwired/stimulus';
+import { useIntersection } from 'stimulus-use';
+
+export default class extends Controller {
+  connect() {
+    useIntersection(this);
+  }
+
+  appear() {
+    if (document.pictureInPictureElement) {
+      document.exitPictureInPicture();
+    }
+  }
+
+  disappear() {
+    if (!document.pictureInPictureElement && !this.element.paused) {
+      this.element.requestPictureInPicture();
+    }
+  }
+
+  showIndicator() {
+    document.querySelector('#pip-indicator').classList.remove('hidden');
+  }
+
+  hideIndicator() {
+    document.querySelector('#pip-indicator').classList.add('hidden');
+  }
+}
+```
+
+**Note**: Picture-in-Picture requires user interaction with the video first and is not supported in Firefox.

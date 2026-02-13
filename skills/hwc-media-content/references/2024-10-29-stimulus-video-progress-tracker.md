@@ -72,3 +72,38 @@ export default class extends Controller {
 - The `timeupdate` event fires during playback and triggers `recordProgress`
 - Consider debouncing `recordProgress` to reduce storage writes (e.g., every 100ms)
 - The `#seekToProgress` method restores the saved position by setting `element.currentTime` on connect
+
+
+## Pattern Card: Video Progress Tracking
+
+**When to use**: Resume video playback from where the user left off.
+
+**GOOD - localStorage persistence with Stimulus**:
+
+```html
+<video data-controller="video-progress"
+       data-video-progress-key-value="video-123"
+       data-action="timeupdate->video-progress#save 
+                    loadedmetadata->video-progress#restore">
+  <source src="/video.mp4" type="video/mp4">
+</video>
+```
+
+```javascript
+import { Controller } from '@hotwired/stimulus';
+
+export default class extends Controller {
+  static values = { key: String };
+
+  save() {
+    localStorage.setItem(this.keyValue, this.element.currentTime);
+  }
+
+  restore() {
+    const time = localStorage.getItem(this.keyValue);
+    if (time) {
+      this.element.currentTime = parseFloat(time);
+    }
+  }
+}
+```

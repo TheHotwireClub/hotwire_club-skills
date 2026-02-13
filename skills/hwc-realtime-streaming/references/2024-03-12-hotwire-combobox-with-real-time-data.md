@@ -165,3 +165,41 @@ end
 - The `external-websocket` controller handles connection management and message routing
 - Each combobox option must have `data-controller="receiver"` and `data-value` attributes set in the Turbo Stream response
 - Turbo Stream responses populate the initial combobox options, while WebSocket messages update them in real-time
+
+
+## Pattern Card: WebSocket Broadcasts with ActionCable
+
+**When to use**: Push server updates to multiple connected clients in real-time.
+
+**GOOD - Model broadcasts**:
+
+```ruby
+# app/models/message.rb
+class Message < ApplicationRecord
+  broadcasts_to :chat_room
+end
+
+# Or manually broadcast:
+Turbo::StreamsChannel.broadcast_append_to(
+  "chat_room_#{room.id}",
+  target: "messages",
+  partial: "messages/message",
+  locals: { message: message }
+)
+```
+
+```erb
+<%# Subscribe to the stream %>
+<%= turbo_stream_from @chat_room %>
+
+<div id="messages">
+  <%= render @messages %>
+</div>
+```
+
+**GOOD - Broadcast refresh for morphing**:
+
+```ruby
+# Trigger a page refresh on all subscribers
+Turbo::StreamsChannel.broadcast_refresh_to("dashboard")
+```

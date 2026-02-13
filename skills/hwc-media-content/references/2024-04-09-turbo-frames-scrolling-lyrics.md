@@ -171,3 +171,39 @@ The server response includes a `view-transition-name` CSS property on the lyrics
   animation-duration: 500ms;
 }
 ```
+
+
+## Pattern Card: Time-Sensitive Content (Scrolling Lyrics)
+
+**When to use**: Update content based on media playback position.
+
+**GOOD - Turbo Frame src updates based on video timecode**:
+
+```html
+<video data-controller="lyric-sync"
+       data-action="timeupdate->lyric-sync#update">
+  <source src="/video.mp4" type="video/mp4">
+</video>
+
+<turbo-frame id="lyrics" data-lyric-sync-target="frame">
+  <!-- Current lyrics loaded here -->
+</turbo-frame>
+```
+
+```javascript
+import { Controller } from '@hotwired/stimulus';
+
+export default class extends Controller {
+  static targets = ['frame'];
+
+  update() {
+    const time = Math.floor(this.element.currentTime);
+    const currentSrc = this.frameTarget.src;
+    const newSrc = `/lyrics?time=${time}`;
+    
+    if (currentSrc !== newSrc) {
+      this.frameTarget.src = newSrc;
+    }
+  }
+}
+```

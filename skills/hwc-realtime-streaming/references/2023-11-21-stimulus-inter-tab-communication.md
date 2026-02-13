@@ -207,3 +207,38 @@ In the `onmessage` callback:
 ### Declarative State Management
 
 To make state management more declarative, use Stimulus values with value changed callbacks. For example, making `done` a Stimulus value allows responding to changes declaratively when other client-side logic sets the value in the DOM.
+
+
+## Pattern Card: Inter-Tab Communication
+
+**When to use**: Sync state across browser tabs without WebSocket (same machine only).
+
+**GOOD - Broadcast Channel API with Stimulus**:
+
+```javascript
+import { Controller } from '@hotwired/stimulus';
+
+export default class extends Controller {
+  static values = { channel: String };
+  
+  connect() {
+    this.channel = new BroadcastChannel(this.channelValue);
+    this.channel.onmessage = (event) => this.receive(event.data);
+  }
+  
+  disconnect() {
+    this.channel.close();
+  }
+  
+  send(data) {
+    this.channel.postMessage(data);
+  }
+  
+  receive(data) {
+    // Handle received data from other tabs
+    console.log('Received:', data);
+  }
+}
+```
+
+**Note**: Broadcast Channel API only works for tabs on the same machine, not across devices.

@@ -93,3 +93,59 @@ export default class extends Controller {
 3. **Memory Management**: `URL.revokeObjectURL()` is called in the image's `onload` handler to release the blob URL from memory after the image loads.
 
 4. **Event Binding**: The `change` event on the file input triggers `appendPreviews`, which processes all selected files in the `event.target.files` collection.
+
+
+## Pattern Card: Image Upload Previews
+
+**When to use**: Show image previews immediately after file selection, before upload.
+
+**GOOD - Blob URLs with proper cleanup**:
+
+```html
+<div data-controller="file-preview">
+  <input type="file" accept="image/*" multiple
+         data-action="change->file-preview#preview">
+  
+  <template data-file-preview-target="template">
+    <li>
+      <img class="thumbnail">
+      <span class="filename"></span>
+    </li>
+  </template>
+  
+  <ul data-file-preview-target="list"></ul>
+</div>
+```
+
+```javascript
+import { Controller } from '@hotwired/stimulus';
+
+export default class extends Controller {
+  static targets = ['template', 'list'];
+
+  preview(event) {
+    for (const file of event.target.files) {
+      const url = URL.createObjectURL(file);
+      const clone = this.templateTarget.content.cloneNode(true);
+      
+      const img = clone.querySelector('img');
+      img.src = url;
+      img.onload = () => URL.revokeObjectURL(url); // Clean up!
+      
+      clone.querySelector('.filename').textContent = file.name;
+      this.listTarget.appendChild(clone);
+    }
+  }
+}
+```
+
+**BAD - No blob URL cleanup (memory leak)**:
+
+```javascript
+preview(event) {
+  for (const file of event.target.files) {
+    const url = URL.createObjectURL(file);
+    img.src = url; // Memory leak! URL never revoked
+  }
+}
+```

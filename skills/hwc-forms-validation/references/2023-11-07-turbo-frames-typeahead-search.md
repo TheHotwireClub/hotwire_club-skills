@@ -108,3 +108,46 @@ document.addEventListener('turbo:before-frame-render', (event) => {
   event.detail.resume();
 });
 ```
+
+
+## Pattern Card: Typeahead Search
+
+**When to use**: Filter results as user types in a search field.
+
+**GOOD - Debounced form submission with Turbo Frame**:
+
+```html
+<form action="/search" data-controller="debounce" data-turbo-frame="results">
+  <input type="search" name="q" 
+         data-action="input->debounce#perform"
+         data-debounce-wait-value="300">
+</form>
+
+<turbo-frame id="results">
+  <!-- Search results rendered here -->
+</turbo-frame>
+```
+
+```javascript
+import { Controller } from '@hotwired/stimulus';
+
+export default class extends Controller {
+  static values = { wait: { type: Number, default: 300 } };
+  
+  perform() {
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => {
+      this.element.requestSubmit();
+    }, this.waitValue);
+  }
+}
+```
+
+**BAD - No debouncing (fires on every keystroke)**:
+
+```html
+<!-- Don't submit on every input event -->
+<form data-action="input->form#submit">
+  <input type="search" name="q"> <!-- Too many requests! -->
+</form>
+```

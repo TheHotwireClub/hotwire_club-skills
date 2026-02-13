@@ -129,3 +129,49 @@ end
 - The form control behaves as if it were a child of the referenced form
 - Enables reusable Turbo Frame components with sorting/filtering across different contexts
 - No JavaScript required beyond existing Stimulus controllers
+
+
+## Pattern Card: External Form Controls
+
+**When to use**: Form controls rendered inside a Turbo Frame need to submit to a form outside the frame (e.g., sorting/filtering controls in results).
+
+**GOOD - Using the form attribute**:
+
+```html
+<form id="search-form" data-controller="faceted-search">
+  <input type="text" name="query">
+  <input type="number" name="published_before">
+</form>
+
+<turbo-frame id="results" src="/results">
+  <!-- This select submits to search-form even though it's in a frame -->
+  <select name="sort" form="search-form" 
+          data-action="input->faceted-search#perform">
+    <option value="name_asc">Name A-Z</option>
+    <option value="name_desc">Name Z-A</option>
+  </select>
+  
+  <ul><!-- results --></ul>
+</turbo-frame>
+```
+
+```erb
+<%# Rails view helper %>
+<%= select_tag :sort, 
+    options_for_select([["Name A-Z", "name_asc"], ["Name Z-A", "name_desc"]], params[:sort]),
+    form: "search-form",
+    data: { action: "input->faceted-search#perform" } %>
+```
+
+**BAD - Duplicating form controls**:
+
+```html
+<!-- Don't duplicate controls in multiple places -->
+<form id="search-form">
+  <select name="sort">...</select>
+</form>
+
+<turbo-frame id="results">
+  <select name="sort">...</select> <!-- Duplicate! Out of sync! -->
+</turbo-frame>
+```

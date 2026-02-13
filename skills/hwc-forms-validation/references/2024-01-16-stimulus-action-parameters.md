@@ -156,3 +156,44 @@ end
 ```
 
 The Stimulus controller uses `@rails/request.js` to send a PATCH request with the ticket ID and team parameter. The DOM manipulation only occurs after a successful server response, ensuring the UI stays in sync with the database state.
+
+## Pattern Card: Action Parameters
+
+**When to use**: Pass data to actions declaratively from HTML.
+
+**GOOD - Data attributes for parameters**:
+
+```html
+<div data-controller="modal">
+  <button data-action="click->modal#open"
+          data-modal-id-param="settings"
+          data-modal-size-param="large">
+    Settings
+  </button>
+  
+  <button data-action="click->modal#open"
+          data-modal-id-param="help"
+          data-modal-size-param="small">
+    Help
+  </button>
+</div>
+```
+
+```javascript
+export default class extends Controller {
+  open({ params: { id, size } }) {
+    const modal = document.querySelector(`#${id}-modal`);
+    modal.classList.add(`modal--${size}`);
+    modal.showModal();
+  }
+}
+```
+
+**BAD - Reading data attributes manually**:
+
+```javascript
+open(event) {
+  // Don't manually read data attributes
+  const id = event.target.dataset.modalIdParam; // Use params instead!
+}
+```

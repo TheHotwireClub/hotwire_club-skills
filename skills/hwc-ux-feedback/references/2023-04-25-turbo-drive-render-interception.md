@@ -49,3 +49,40 @@ document.addEventListener('turbo:before-render', async (event) => {
 ## Caveats
 
 Beware of restoration visits. When HTML is loaded from the cache, the `turbo:before-render` event still fires, which can cause animations to run on cached page loads. Check for `<html data-turbo-preview>` attribute or opt out of caching altogether to avoid this issue.
+
+
+## Pattern Card: Page Transitions with Render Interception
+
+**When to use**: Adding animations or visual polish between page navigations.
+
+**GOOD - Using turbo:before-render for animations**:
+
+```javascript
+document.addEventListener('turbo:before-render', async (event) => {
+  // Skip for cached previews
+  if (document.documentElement.hasAttribute('data-turbo-preview')) {
+    return;
+  }
+
+  event.preventDefault();
+
+  // Animate out
+  document.querySelectorAll('.animate-out').forEach((el, i) => {
+    el.classList.add('fly-out');
+    el.style.animationDelay = `${i * 100}ms`;
+  });
+
+  // Wait for animation, then continue
+  setTimeout(() => event.detail.resume(), 500);
+});
+```
+
+**BAD - Not checking for preview/cache**:
+
+```javascript
+// Don't animate on every render including cache restores
+document.addEventListener('turbo:before-render', (event) => {
+  event.preventDefault();
+  animate().then(() => event.detail.resume()); // Runs on back button too!
+});
+```

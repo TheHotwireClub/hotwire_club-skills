@@ -88,3 +88,48 @@ export default class extends Controller {
 3. In production, replace the `setTimeout` with `this.imageTarget.addEventListener('load', ...)` to trigger the transition when the image actually loads.
 
 4. The opacity transition classes provide a smooth fade from blurhash placeholder to the loaded image.
+
+
+## Pattern Card: Progressive Image Loading (Blurhash)
+
+**When to use**: Show a blurred placeholder while high-resolution images load.
+
+**GOOD - Decode blurhash and swap on load**:
+
+```html
+<div data-controller="blurhash"
+     data-blurhash-hash-value="LEHV6nWB2yk8pyo0adR*.7kCMdnj">
+  <canvas data-blurhash-target="canvas" width="32" height="32"></canvas>
+  <img data-blurhash-target="image" 
+       data-src="/high-res.jpg"
+       data-action="load->blurhash#reveal"
+       class="hidden">
+</div>
+```
+
+```javascript
+import { Controller } from '@hotwired/stimulus';
+import { decode } from 'blurhash';
+
+export default class extends Controller {
+  static targets = ['canvas', 'image'];
+  static values = { hash: String };
+
+  connect() {
+    // Decode and render blurhash to canvas
+    const pixels = decode(this.hashValue, 32, 32);
+    const ctx = this.canvasTarget.getContext('2d');
+    const imageData = ctx.createImageData(32, 32);
+    imageData.data.set(pixels);
+    ctx.putImageData(imageData, 0, 0);
+    
+    // Start loading actual image
+    this.imageTarget.src = this.imageTarget.dataset.src;
+  }
+
+  reveal() {
+    this.canvasTarget.classList.add('hidden');
+    this.imageTarget.classList.remove('hidden');
+  }
+}
+```

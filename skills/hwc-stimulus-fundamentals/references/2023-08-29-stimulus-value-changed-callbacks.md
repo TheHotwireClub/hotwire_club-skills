@@ -121,3 +121,48 @@ function generateDailyLabels(year = new Date().getFullYear()) {
 4. **Finding matching datasets**: Use `find()` to locate the correct dataset by matching a property (e.g., `label`).
 
 5. **Updating without animation**: Pass `'none'` to `chart.update()` to disable transition animations.
+
+
+## Pattern Card: Value Changed Callbacks
+
+**When to use**: React to state changes, especially when integrating third-party libraries.
+
+**GOOD - Reactive updates with safe guards**:
+
+```javascript
+import { Controller } from '@hotwired/stimulus';
+import Chart from 'chart.js';
+
+export default class extends Controller {
+  static targets = ['canvas'];
+  static values = { data: Array };
+
+  connect() {
+    this.chart = new Chart(this.canvasTarget, {
+      type: 'line',
+      data: { datasets: [{ data: this.dataValue }] }
+    });
+  }
+
+  disconnect() {
+    this.chart?.destroy();
+  }
+
+  dataValueChanged() {
+    // Guard: callback can fire before connect()
+    if (!this.chart) return;
+    
+    this.chart.data.datasets[0].data = this.dataValue;
+    this.chart.update('none'); // 'none' disables animation
+  }
+}
+```
+
+**BAD - No guard against early callback**:
+
+```javascript
+dataValueChanged() {
+  // Crashes if called before connect()!
+  this.chart.data.datasets[0].data = this.dataValue;
+}
+```

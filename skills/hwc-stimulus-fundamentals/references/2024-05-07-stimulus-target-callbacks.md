@@ -186,3 +186,29 @@ end
 ```
 
 When Turbo Streams append or remove job items, Stimulus target callbacks automatically trigger to update the statistics counters.
+
+
+## Pattern Card: Target Callbacks
+
+**When to use**: React when targets are connected/disconnected (e.g., from Turbo Stream updates).
+
+**GOOD - Update UI when targets change**:
+
+```javascript
+export default class extends Controller {
+  static targets = ['item'];
+  static values = { count: Number };
+
+  itemTargetConnected(target) {
+    this.countValue = this.itemTargets.length;
+  }
+
+  itemTargetDisconnected(target) {
+    this.countValue = this.itemTargets.length;
+  }
+
+  countValueChanged() {
+    this.element.querySelector('.count').textContent = this.countValue;
+  }
+}
+```

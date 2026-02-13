@@ -69,3 +69,50 @@ To maintain editing state across page refreshes, use cookies:
 - On page load, check the cookie value and redirect to the form route if `editState` is `true`
 
 In Rails, use `ActionDispatch::Cookies` for cookie management.
+
+
+## Pattern Card: Inline Editing
+
+**When to use**: Edit content in place without navigating to a separate edit page.
+
+**GOOD - Turbo Frame swap between display and edit views**:
+
+```html
+<!-- Display view -->
+<turbo-frame id="title-editor">
+  <a href="/posts/1/edit_title">
+    <%= @post.title %>
+  </a>
+</turbo-frame>
+
+<!-- Edit view (returned by /posts/1/edit_title) -->
+<turbo-frame id="title-editor">
+  <form action="/posts/1/title" method="patch">
+    <input type="text" name="post[title]" value="<%= @post.title %>" 
+           autofocus id="post_title">
+  </form>
+</turbo-frame>
+```
+
+```javascript
+// Auto-submit on blur and select text on focus
+document.addEventListener('turbo:frame-render', () => {
+  const input = document.querySelector('#post_title');
+  if (!input) return;
+  
+  input.select(); // Select all text for easy replacement
+  
+  input.addEventListener('focusout', (e) => {
+    e.target.closest('form').requestSubmit();
+  });
+});
+```
+
+**BAD - Inline editing without proper focus management**:
+
+```javascript
+// Don't forget to handle focus and selection
+document.addEventListener('turbo:frame-render', () => {
+  // Missing: text selection, auto-submit on blur
+});
+```

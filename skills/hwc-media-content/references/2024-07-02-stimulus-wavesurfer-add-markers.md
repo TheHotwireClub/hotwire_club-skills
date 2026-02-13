@@ -196,3 +196,53 @@ There are two approaches to managing state with third-party libraries:
 2. Use Stimulus values to drive the library's behavior
 
 The choice depends on whether the Stimulus controller is primarily a wrapper around a specific library (exploit native mechanics) or if the library should be exchangeable (drive from Stimulus values).
+
+
+## Pattern Card: Third-Party Library Integration (Wavesurfer)
+
+**When to use**: Wrap audio/video libraries that manage their own state.
+
+**GOOD - Stimulus values as source of truth**:
+
+```html
+<div data-controller="waveform"
+     data-waveform-markers-value="[]"
+     data-waveform-url-value="/audio.mp3">
+  <div data-waveform-target="container"></div>
+  <button data-action="click->waveform#addMarker">Add Marker</button>
+</div>
+```
+
+```javascript
+import { Controller } from '@hotwired/stimulus';
+import WaveSurfer from 'wavesurfer.js';
+
+export default class extends Controller {
+  static targets = ['container'];
+  static values = { url: String, markers: Array };
+
+  connect() {
+    this.wavesurfer = WaveSurfer.create({
+      container: this.containerTarget,
+      url: this.urlValue
+    });
+  }
+
+  disconnect() {
+    this.wavesurfer.destroy();
+  }
+
+  addMarker() {
+    const time = this.wavesurfer.getCurrentTime();
+    this.markersValue = [...this.markersValue, { time }];
+  }
+
+  markersValueChanged() {
+    // Sync markers to wavesurfer
+    this.wavesurfer.clearMarkers();
+    this.markersValue.forEach(m => this.wavesurfer.addMarker(m));
+  }
+}
+```
+
+**Key insight**: Use Stimulus value changed callbacks to keep third-party library state in sync.

@@ -97,3 +97,43 @@ This is not the same as Turbo Drive navigation. If a `<turbo-frame>` element is 
 - Do not implement `pushState` manually; it interferes with Turbo's restoration identifier system
 - Use `data-turbo-action="advance"` for built-in history support
 - Consider wrapping the solution in a Stimulus controller for portability
+
+
+## Pattern Card: Tabbed Navigation
+
+**When to use**: Switch between content sections without full page reloads, with browser history support.
+
+**GOOD - Turbo Frame tabs with history and active state**:
+
+```html
+<nav aria-label="Tabs">
+  <a href="/map" data-turbo-frame="content" data-turbo-action="advance">Map</a>
+  <a href="/images" data-turbo-frame="content" data-turbo-action="advance">Images</a>
+  <a href="/facts" data-turbo-frame="content" data-turbo-action="advance">Facts</a>
+</nav>
+
+<turbo-frame id="content">
+  <!-- Tab content rendered here -->
+</turbo-frame>
+```
+
+```javascript
+// Update active tab styling on frame load
+document.addEventListener('turbo:frame-load', (event) => {
+  document.querySelectorAll('nav a').forEach((link) => {
+    const isActive = link.href === event.target.src;
+    link.classList.toggle('active', isActive);
+    link.setAttribute('aria-current', isActive ? 'page' : null);
+  });
+});
+```
+
+**BAD - Using turbo:click for active state**:
+
+```javascript
+// Don't use turbo:click - it fires before the frame loads
+document.addEventListener('turbo:click', (e) => {
+  // Frame hasn't loaded yet! Active state may be wrong if load fails
+  e.target.classList.add('active');
+});
+```

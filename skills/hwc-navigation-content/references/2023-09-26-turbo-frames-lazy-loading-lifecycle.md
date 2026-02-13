@@ -91,3 +91,48 @@ export default class extends Controller {
 - Event delegation on `document` allows listening to frame loads from any frame
 - Filtering by frame ID ensures each controller only responds to its corresponding frame
 - Value changed callbacks decouple business logic from presentation logic, allowing the `seen` value to be modified by the controller, server rendering, or other JavaScript
+
+
+## Pattern Card: Lazy Loading Frames
+
+**When to use**: Defer loading content until it's scrolled into view.
+
+**GOOD - Lazy frame with loading indicator**:
+
+```html
+<turbo-frame id="comments" src="/comments" loading="lazy">
+  <div class="placeholder">Loading comments...</div>
+</turbo-frame>
+```
+
+**Track when lazy frames load**:
+
+```html
+<li data-controller="section"
+    data-section-frame-value="introduction"
+    data-action="turbo:frame-load@document->section#markLoaded">
+  <a href="#introduction">Introduction</a>
+</li>
+
+<turbo-frame id="introduction" src="/intro" loading="lazy">
+  Loading...
+</turbo-frame>
+```
+
+```javascript
+export default class extends Controller {
+  static values = { frame: String, loaded: Boolean };
+
+  markLoaded(event) {
+    if (event.target.id === this.frameValue) {
+      this.loadedValue = true;
+    }
+  }
+
+  loadedValueChanged() {
+    if (this.loadedValue) {
+      this.element.classList.add('loaded');
+    }
+  }
+}
+```

@@ -164,3 +164,32 @@ The results view renders within the Turbo Frame:
 3. Call `toString()` and use it to construct the `frameTarget`'s `src` attribute
 
 When the Turbo Frame's `src` attribute is updated, Turbo automatically fetches the new URL and updates the frame content with the filtered results.
+
+
+## Pattern Card: Faceted Search
+
+**When to use**: Filter results by multiple criteria with URL state.
+
+**GOOD - Stimulus controller collecting form data into frame src**:
+
+```html
+<form data-controller="faceted-search" data-turbo-frame="results">
+  <input type="text" name="q" data-action="input->faceted-search#search">
+  <select name="category" data-action="change->faceted-search#search">
+    <option value="">All</option>
+    <option value="books">Books</option>
+  </select>
+</form>
+
+<turbo-frame id="results" src="/results"></turbo-frame>
+```
+
+```javascript
+export default class extends Controller {
+  search() {
+    const params = new URLSearchParams(new FormData(this.element));
+    const frame = document.querySelector('turbo-frame#results');
+    frame.src = `/results?${params}`;
+  }
+}
+```

@@ -106,3 +106,52 @@ StreamActions.highlightNewItem = function () {
 ```
 
 Custom actions are particularly useful for orchestrating complex UI animations and behaviors that would otherwise require multiple standard stream actions or client-side JavaScript coordination.
+
+
+## Pattern Card: Custom Stream Actions
+
+**When to use**: Complex UI behaviors that aren't covered by the 7 default actions (append, prepend, replace, update, remove, before, after).
+
+**GOOD - Define custom action on StreamActions**:
+
+```javascript
+import { StreamActions } from "@hotwired/turbo"
+
+// Show a dialog
+StreamActions.showDialog = function() {
+  const target = this.getAttribute('target');
+  document.querySelector(target)?.showModal();
+};
+
+// Highlight an element temporarily
+StreamActions.highlight = function() {
+  const element = document.querySelector(this.getAttribute('target'));
+  element?.classList.add('highlight');
+  setTimeout(() => element?.classList.remove('highlight'), 2000);
+};
+
+// Sequential animation cascade
+StreamActions.animateCascade = async function() {
+  const elements = document.querySelectorAll(this.getAttribute('targets'));
+  for (const element of elements) {
+    element.classList.add('animate');
+    await new Promise(r => setTimeout(r, 250));
+  }
+};
+```
+
+**Rails ERB usage**:
+
+```erb
+<%# app/views/items/create.turbo_stream.erb %>
+<%= turbo_stream.append "items", partial: "item", locals: { item: @item } %>
+<%= turbo_stream.action "highlight", target: "#item_#{@item.id}" %>
+<%= turbo_stream.action "showDialog", target: "#success-dialog" %>
+```
+
+**BAD - Inline JavaScript in stream responses**:
+
+```erb
+<%# Don't embed scripts in streams %>
+<script>document.querySelector('#dialog').showModal()</script>
+```

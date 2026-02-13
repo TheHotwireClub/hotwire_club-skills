@@ -131,3 +131,73 @@ This approach:
 - Hides existing content (sets child nodes to `display: none` or font-size to 0 for text nodes)
 - Inserts an `::after` pseudo-element with loading text via the `content` property
 - Limited to text/CSS content values (no arbitrary HTML)
+
+
+## Pattern Card: Loading Spinner for Turbo Frames
+
+**When to use**: Turbo Frames loading content asynchronously (lazy loading or user-triggered navigation).
+
+**GOOD - Using MutationObserver to detect busy attribute**:
+
+```html
+<turbo-frame id="content" src="/page1" data-controller="frame-spinner">
+  <template data-frame-spinner-target="placeholder">
+    <div class="spinner">Loading...</div>
+  </template>
+</turbo-frame>
+```
+
+```javascript
+import { Controller } from '@hotwired/stimulus';
+import { useMutation } from 'stimulus-use';
+
+export default class extends Controller {
+  static targets = ['placeholder'];
+
+  connect() {
+    useMutation(this, { attributes: true });
+    this.templateNode = this.placeholderTarget.content.cloneNode(true);
+
+    if (this.element.hasAttribute('busy')) {
+      this.#renderPlaceholder();
+    }
+  }
+
+  mutate(entries) {
+    entries.filter(e => e.attributeName === 'busy').forEach(() => {
+      this.#renderPlaceholder();
+    });
+  }
+
+  #renderPlaceholder() {
+    if (this.element.hasChildNodes()) {
+      this.element.firstChild.replaceWith(this.templateNode.cloneNode(true));
+    } else {
+      this.element.appendChild(this.templateNode.cloneNode(true));
+    }
+  }
+}
+```
+
+**BAD - Hardcoded timeouts**:
+
+```javascript
+// Don't guess when to show/hide spinner
+loadFrame() {
+  this.showSpinner();
+  setTimeout(() => this.hideSpinner(), 2000); // Brittle!
+}
+```
+
+**CSS-only alternative** (for simple text indicators):
+
+```css
+turbo-frame[busy] {
+  font-size: 0;
+  * { display: none; }
+  &::after {
+    font-size: 1rem;
+    content: 'Loading...';
+  }
+}
+```

@@ -141,3 +141,40 @@ Keyboard actions for input management:
 - Elements must have `tabindex="0"` to receive keyboard events if they are not naturally focusable
 - Value callbacks provide validation and a single source of truth for state changes
 
+
+
+## Pattern Card: KeyboardEvent Handling
+
+**When to use**: Handle keyboard shortcuts without third-party libraries.
+
+**GOOD - Stimulus action filters**:
+
+```html
+<div data-controller="shortcuts"
+     data-action="keydown.ctrl+s@document->shortcuts#save
+                  keydown.escape@document->shortcuts#cancel
+                  keydown.enter->shortcuts#submit">
+  <input type="text">
+  <button>Save</button>
+</div>
+```
+
+```javascript
+export default class extends Controller {
+  save(event) {
+    event.preventDefault(); // Prevent browser save dialog
+    // Save logic
+  }
+
+  cancel(event) {
+    // Cancel logic
+  }
+
+  submit(event) {
+    // Submit logic
+  }
+}
+```
+
+**Supported modifiers**: `ctrl`, `alt`, `shift`, `meta`  
+**Supported keys**: `enter`, `tab`, `esc`, `space`, `up`, `down`, `left`, `right`, plus letter/number keys

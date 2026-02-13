@@ -127,3 +127,47 @@ To enable or disable progress bar updates dynamically, guard the progress bar st
 
 ## Considerations
 The Turbo progress bar is designed for navigation feedback. Using it for non-navigation tasks may result in poor UX. Consider using it for extended navigation scenarios such as filtering large datasets that take time to process.
+
+
+## Pattern Card: Custom Progress Bar for Long Operations
+
+**When to use**: Background jobs, file uploads, or any operation with measurable progress.
+
+**GOOD - Reusing Turbo's progress bar with WebSocket**:
+
+```javascript
+import consumer from "./channels/consumer"
+
+consumer.subscriptions.create(
+  { channel: "ProgressChannel", id: taskId },
+  {
+    received({ amount }) {
+      const progressBar = window.Turbo.navigator.adapter.progressBar;
+      progressBar.setValue(amount);
+      amount < 1 ? progressBar.show() : progressBar.hide();
+    }
+  }
+);
+```
+
+```ruby
+# app/jobs/progress_job.rb
+class ProgressJob < ApplicationJob
+  def perform(task_id)
+    progress = 0
+    while progress < 1.0
+      progress += 0.05
+      ActionCable.server.broadcast("progress_#{task_id}", { amount: progress })
+      sleep 0.1
+    end
+  end
+end
+```
+
+**BAD - Custom progress bar without Turbo integration**:
+
+```javascript
+// Don't create a separate progress bar system
+const customBar = document.createElement('div');
+// ... lots of custom CSS and positioning
+```

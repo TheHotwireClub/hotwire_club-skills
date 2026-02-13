@@ -86,3 +86,31 @@ document.addEventListener('turbo:before-render', (event) => {
 2. `turbo:submit-end` fires after the form submission completes and is where to update the indicator to "Saved."
 
 3. `turbo:before-render` can be used with `event.preventDefault()` and `event.detail.resume()` to add delays if needed to make status transitions perceivable.
+
+
+## Pattern Card: Form Activity Indicators
+
+**When to use**: Forms that take time to process (file uploads, complex operations).
+
+**GOOD - Using turbo:submit-start and turbo:submit-end**:
+
+```javascript
+document.addEventListener('turbo:submit-start', (e) => {
+  const form = e.target;
+  form.querySelector('[type="submit"]').disabled = true;
+  form.classList.add('submitting');
+});
+
+document.addEventListener('turbo:submit-end', (e) => {
+  const form = e.target;
+  form.querySelector('[type="submit"]').disabled = false;
+  form.classList.remove('submitting');
+});
+```
+
+```css
+form.submitting [type="submit"] {
+  opacity: 0.5;
+  cursor: wait;
+}
+```

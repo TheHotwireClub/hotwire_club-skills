@@ -69,3 +69,32 @@ The solution replaces the widget container's innerHTML with a loading spinner be
 This technique also prevents issues with content-heavy elements such as images or media that might not have optimal HTTP Cache headers set. Without cleanup, such assets could be loaded twice: once when presenting the restored cache snapshot, and again after the requested page loads.
 
 When using `turbo:before-cache`, ensure you only modify the specific DOM elements that need cleanup to avoid inadvertently altering unrelated parts of the page.
+
+
+## Pattern Card: Cache Lifecycle Management
+
+**When to use**: Clean up UI state before Turbo caches the page.
+
+**GOOD - Reset state before caching**:
+
+```javascript
+document.addEventListener('turbo:before-cache', () => {
+  // Close dropdowns
+  document.querySelectorAll('[data-expanded]').forEach(el => {
+    el.removeAttribute('data-expanded');
+  });
+  
+  // Clear temporary messages
+  document.querySelectorAll('.flash').forEach(el => el.remove());
+  
+  // Reset form state
+  document.querySelectorAll('form').forEach(form => form.reset());
+});
+```
+
+**BAD - Leaving transient UI state in cache**:
+
+```javascript
+// Don't leave modals open, dropdowns expanded, etc.
+// They'll show briefly on back navigation!
+```

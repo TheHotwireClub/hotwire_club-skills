@@ -114,3 +114,59 @@ Turbo::StreamsChannel.broadcast_refresh_to("favorites")
 - The optimistic template should contain the inverse state (if currently favorited, show unfavorited state).
 - Provide user feedback (flash messages) when reconciliation occurs or errors happen.
 - Turbo 8 morphs will automatically update the optimistic template content during refresh, preparing it for the next optimistic update.
+
+
+## Pattern Card: Optimistic UI with Turbo 8 Morphs
+
+**When to use**: Immediate feedback for actions like favorites, likes, or toggles where latency would feel sluggish.
+
+**GOOD - Template-based optimistic updates**:
+
+```html
+<form method="post" action="/favorites" data-optimistic-form>
+  <template class="optimistic-template">
+    <turbo-stream action="replace" target="favorite-btn">
+      <template>
+        <button id="favorite-btn" disabled>
+          <!-- Inverse state (optimistic) -->
+          <svg class="heart-filled">...</svg>
+        </button>
+      </template>
+    </turbo-stream>
+  </template>
+  
+  <button type="submit" id="favorite-btn">
+    <svg class="heart-empty">...</svg>
+  </button>
+</form>
+```
+
+```javascript
+document.querySelectorAll('form[data-optimistic-form]').forEach((form) => {
+  form.addEventListener('turbo:submit-start', (e) => {
+    const template = e.target.querySelector('template.optimistic-template');
+    document.body.appendChild(template.content.cloneNode(true));
+  });
+});
+```
+
+**Rails controller with morph reconciliation**:
+
+```ruby
+def create
+  @favorite = current_user.toggle_favorite(params[:item_id])
+  
+  respond_to do |format|
+    format.turbo_stream { render turbo_stream: turbo_stream.refresh }
+  end
+end
+```
+
+**BAD - Client-side state without reconciliation**:
+
+```javascript
+// Don't manage state purely client-side
+button.addEventListener('click', () => {
+  button.classList.toggle('favorited'); // No server reconciliation!
+});
+```

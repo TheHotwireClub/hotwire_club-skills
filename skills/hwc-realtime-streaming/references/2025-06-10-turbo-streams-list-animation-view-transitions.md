@@ -131,3 +131,34 @@ end
 - A `view-transition-name` must be unique across all elements on a page
 - The `turbo:before-stream-render` event provides `event.detail.newStream` which contains the Turbo Stream element being executed
 - Remove the animation class after the transition completes to prevent the animation from triggering on subsequent renders
+
+
+## Pattern Card: List Animations with View Transitions
+
+**When to use**: Animate items being added to lists via Turbo Streams.
+
+**GOOD - Wrap stream render in View Transition**:
+
+```javascript
+document.addEventListener('turbo:before-stream-render', (event) => {
+  if (event.target.action === 'append') {
+    event.preventDefault();
+    
+    document.startViewTransition(() => {
+      event.target.performAction();
+    });
+  }
+});
+```
+
+```css
+/* Animate new items */
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+::view-transition-new(list-item) {
+  animation: slide-in 0.3s ease-out;
+}
+```

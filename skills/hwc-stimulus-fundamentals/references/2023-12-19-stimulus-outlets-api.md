@@ -130,3 +130,81 @@ export default class extends Controller {
 ```
 
 The controller receives the count via the `update()` method called from the outlet and updates the count target's text content.
+
+
+## Pattern Card: Outlets API (Inter-Controller Communication)
+
+**When to use**: Pass data or trigger actions between controllers.
+
+**GOOD - Declare outlets and call methods on them**:
+
+```html
+<div data-controller="dashboard"
+     data-dashboard-job-outlet=".job"
+     data-dashboard-widget-outlet=".widget">
+  
+  <div class="job" data-controller="job" id="job-1">...</div>
+  <div class="job" data-controller="job" id="job-2">...</div>
+  
+  <div class="widget" data-controller="widget" 
+       data-widget-status-value="running">...</div>
+</div>
+```
+
+```javascript
+// dashboard_controller.js
+export default class extends Controller {
+  static outlets = ['job', 'widget'];
+  static values = { jobs: Array };
+
+  jobsValueChanged() {
+    // Update each job outlet
+    this.jobOutlets.forEach((outlet) => {
+      const job = this.jobsValue.find(j => j.id === outlet.element.id);
+      outlet.refresh(job);
+    });
+
+    // Update widget counters
+    this.widgetOutlets.forEach((outlet) => {
+      const count = this.jobsValue.filter(
+        j => j.status === outlet.statusValue
+      ).length;
+      outlet.update(count);
+    });
+  }
+}
+
+// job_controller.js
+export default class extends Controller {
+  static targets = ['indicator'];
+  static classes = ['queued', 'running', 'completed'];
+
+  refresh(job) {
+    // Remove all status classes, add current
+    this.indicatorTarget.classList.remove(
+      ...this.queuedClasses,
+      ...this.runningClasses,
+      ...this.completedClasses
+    );
+    this.indicatorTarget.classList.add(...this[`${job.status}Classes`]);
+  }
+}
+
+// widget_controller.js
+export default class extends Controller {
+  static values = { status: String };
+  static targets = ['count'];
+
+  update(count) {
+    this.countTarget.textContent = count;
+  }
+}
+```
+
+**BAD - Using private API**:
+
+```javascript
+// Don't use private API for controller communication
+const otherController = this.application
+  .getControllerForElementAndIdentifier(element, 'other'); // Private!
+```

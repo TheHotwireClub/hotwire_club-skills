@@ -118,3 +118,24 @@ export default class extends Controller {
 ```
 
 Attach the controller to the document element in your HTML: `<html data-controller="scroll-restoration">`.
+
+
+## Pattern Card: Scroll Position Restoration
+
+**When to use**: Preserve scroll position when navigating back to a page.
+
+**GOOD - Store scroll position in sessionStorage**:
+
+```javascript
+document.addEventListener('turbo:before-cache', () => {
+  const scrollable = document.querySelector('.scrollable-content');
+  sessionStorage.setItem('scrollPosition', scrollable.scrollTop);
+});
+
+document.addEventListener('turbo:render', () => {
+  const position = sessionStorage.getItem('scrollPosition');
+  if (position) {
+    document.querySelector('.scrollable-content').scrollTop = position;
+  }
+});
+```

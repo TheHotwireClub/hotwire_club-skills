@@ -101,3 +101,36 @@ HTML usage:
 - Each message element must have a `data-timestamp` attribute
 - The MutationObserver detects when new children are added
 - Observer must be disconnected during sorting to avoid infinite loops 
+
+
+## Pattern Card: MutationObserver for Auto-Sorting
+
+**When to use**: React to DOM changes from WebSocket/Turbo Stream messages.
+
+**GOOD - Sort items by timestamp when added out of order**:
+
+```javascript
+import { Controller } from '@hotwired/stimulus';
+
+export default class extends Controller {
+  connect() {
+    this.observer = new MutationObserver((mutations) => {
+      this.sort();
+    });
+    
+    this.observer.observe(this.element, { childList: true });
+  }
+
+  disconnect() {
+    this.observer.disconnect();
+  }
+
+  sort() {
+    const items = [...this.element.children];
+    items.sort((a, b) => {
+      return new Date(a.dataset.timestamp) - new Date(b.dataset.timestamp);
+    });
+    items.forEach(item => this.element.appendChild(item));
+  }
+}
+```

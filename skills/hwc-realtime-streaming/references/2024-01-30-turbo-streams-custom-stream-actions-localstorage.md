@@ -178,3 +178,29 @@ document.addEventListener('videochange', (event) => {
 - Invoke actions by cloning template elements and appending them to the DOM
 - Use `DOMContentLoaded` to restore state on page load
 - Hide UI elements initially to prevent flicker when restoring state
+
+
+## Pattern Card: LocalStorage with Custom Stream Actions
+
+**When to use**: Persist ephemeral client state that should survive page reloads.
+
+**GOOD - Custom action to sync localStorage**:
+
+```javascript
+import { StreamActions } from "@hotwired/turbo"
+
+StreamActions.setLocalStorage = function() {
+  const key = this.getAttribute('key');
+  const value = this.getAttribute('value');
+  localStorage.setItem(key, value);
+};
+
+StreamActions.removeLocalStorage = function() {
+  const key = this.getAttribute('key');
+  localStorage.removeItem(key);
+};
+```
+
+```erb
+<%= turbo_stream.action "setLocalStorage", key: "current_video", value: @video.id %>
+```

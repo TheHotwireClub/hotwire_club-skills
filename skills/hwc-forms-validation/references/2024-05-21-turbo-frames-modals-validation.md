@@ -123,3 +123,66 @@ class AnimalsController < ApplicationController
   end
 end
 ```
+
+
+## Pattern Card: Modal Forms with Validation
+
+**When to use**: Forms inside `<dialog>` elements that need to show validation errors and close on success.
+
+**GOOD - Turbo Frame inside dialog with turbo:submit-end handler**:
+
+```html
+<dialog id="editDialog">
+  <turbo-frame id="edit-form">
+    <form action="/items" method="post">
+      <p class="errors"><%= @errors if @errors.present? %></p>
+      <input type="text" name="name" required>
+      <button type="submit">Save</button>
+    </form>
+  </turbo-frame>
+</dialog>
+
+<button onclick="document.getElementById('editDialog').showModal()">
+  Edit Item
+</button>
+```
+
+```javascript
+const dialog = document.getElementById('editDialog');
+
+dialog.addEventListener('turbo:submit-end', async (e) => {
+  const { ok, url } = e.detail.fetchResponse.response;
+  
+  if (ok) {
+    // Success: close dialog and navigate
+    dialog.close();
+    Turbo.visit(url, { action: 'replace' });
+  }
+  // Validation errors: Turbo Frame swaps in error messages automatically
+});
+```
+
+```ruby
+# Rails controller
+def create
+  @item = Item.new(item_params)
+  
+  if @item.save
+    redirect_to items_path, status: :see_other
+  else
+    @errors = @item.errors.full_messages.join(', ')
+    render :new, status: :unprocessable_entity
+  end
+end
+```
+
+**BAD - No Turbo Frame (errors not displayed)**:
+
+```html
+<!-- Without a Turbo Frame, validation errors cause a full page swap -->
+<dialog id="editDialog">
+  <form action="/items" method="post">
+    <!-- Errors won't show in modal! -->
+  </form>
+</dialog>
+```
