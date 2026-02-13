@@ -1,0 +1,4 @@
+interface:
+  display_name: "HWC Stimulus Fundamentals"
+  short_description: "Stimulus lifecycle, values, targets, outlets, and events."
+  default_prompt: "Use $hwc-stimulus-fundamentals to design a Stimulus controller with clean lifecycle, state, and event patterns."

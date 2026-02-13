@@ -1,0 +1,4 @@
+interface:
+  display_name: "HWC UX Feedback"
+  short_description: "Loading states, optimistic UI, and transition patterns."
+  default_prompt: "Use $hwc-ux-feedback to add clear loading feedback and optimistic UI reconciliation to a Hotwire interaction."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "HWC Real-Time & Streaming"
+  short_description: "Turbo Streams, custom actions, and live state sync."
+  default_prompt: "Use $hwc-realtime-streaming to add push-based Turbo Stream updates with reliable custom stream actions."

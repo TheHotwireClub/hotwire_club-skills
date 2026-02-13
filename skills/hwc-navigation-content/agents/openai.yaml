@@ -1,0 +1,4 @@
+interface:
+  display_name: "HWC Navigation & Content"
+  short_description: "Turbo navigation, pagination, filters, and lazy frames."
+  default_prompt: "Use $hwc-navigation-content to implement a Turbo Frame navigation flow with correct URL and history behavior."

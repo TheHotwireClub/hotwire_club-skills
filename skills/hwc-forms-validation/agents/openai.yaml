@@ -1,0 +1,4 @@
+interface:
+  display_name: "HWC Forms & Validation"
+  short_description: "Hotwire forms, validation, inline edit, and typeahead."
+  default_prompt: "Use $hwc-forms-validation to implement a Turbo form flow with robust validation and inline editing."

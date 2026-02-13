@@ -1,0 +1,4 @@
+interface:
+  display_name: "HWC Media & Rich Content"
+  short_description: "Hotwire patterns for image, video, audio, and uploads."
+  default_prompt: "Use $hwc-media-content to build a Stimulus-driven media feature with previews, playback state, and cleanup."
