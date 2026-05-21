@@ -16,8 +16,12 @@ ruby scripts/sync-references.rb
 What this does:
 
 - Reads `config/supertopic-mapping.yml`
-- Copies mapped articles from corpus into `skills/hwc-*/references/`
+- Copies **new** mapped articles from corpus into `skills/hwc-*/references/`
+  (already-synced references are skipped so post-sync normalization is preserved)
 - Rebuilds `references/INDEX.md` per skill
+
+To deliberately overwrite every reference with the raw corpus version
+(discarding normalization), run `FORCE_SYNC=1 ruby scripts/sync-references.rb`.
 
 ### 2) Normalize skills after sync
 

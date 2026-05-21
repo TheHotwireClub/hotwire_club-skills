@@ -16,3 +16,4 @@ Implement WebSocket updates, live data, custom stream actions, and state synchro
 - [Turbo Streams - List Animations Using the View Transitions API](2025-06-10-turbo-streams-list-animation-view-transitions.md) - Create list animations using Turbo Streams and the View Transitions API
 - [Hotwire Combobox with Real Time Data](2024-03-12-hotwire-combobox-with-real-time-data.md) - Update combobox options using Websockets and Stimulus outlets
 - [Stimulus - Inter-Tab Communication](2023-11-21-stimulus-inter-tab-communication.md) - Manage inter-browser communication using Stimulus and the Broadcast Channel API
+- [Turbo Streams - Custom Stream Actions - pushState](2026-04-14-turbo-streams-custom-stream-actions-push-state.md) - Synchronize browser history with Turbo Stream responses using a custom push_state action, a Stimulus controller, and the popstate event.

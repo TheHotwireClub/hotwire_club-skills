@@ -15,3 +15,4 @@ Handle form submissions, inline editing, real-time validation, and typeahead wit
 - [Turbo Frames - Using External Forms](2026-02-03-turbo-frames-external-form.md) - Refer to external forms from within a Turbo Frame
 - [Turbo Frames - Typeahead Search](2023-11-07-turbo-frames-typeahead-search.md) - Update filter results using eager loading Turbo Frames.
 - [Stimulus - Action Parameters](2024-01-16-stimulus-action-parameters.md)
+- [Turbo Frames - Chained Selects](2026-03-24-turbo-frames-chained-selects.md) - Build dependent dropdown menus that update dynamically using a Turbo Frame and a small Stimulus controller.

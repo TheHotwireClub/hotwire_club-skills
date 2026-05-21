@@ -1,0 +1,19 @@
+{
+  "name": "hotwire-club",
+  "description": "The Hotwire Club marketplace - Hotwire and Rails development skills.",
+  "owner": {
+    "name": "Julian Rubisch",
+    "email": "info@minthesize.com"
+  },
+  "plugins": [
+    {
+      "name": "hotwire-club-skills",
+      "source": "./",
+      "description": "Practical Hotwire skills for Rails developers: Turbo Drive, Turbo Frames, Turbo Streams, and Stimulus patterns sourced from The Hotwire Club articles.",
+      "repository": "https://github.com/TheHotwireClub/hotwire_club-skills",
+      "license": "MIT",
+      "category": "development",
+      "keywords": ["hotwire", "rails", "turbo", "stimulus", "ruby"]
+    }
+  ]
+}

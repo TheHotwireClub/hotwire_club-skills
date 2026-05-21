@@ -16,3 +16,6 @@ Implement loading states, progress indicators, optimistic UI, and smooth transit
 - [Turbo Frames - Loading Spinner](2026-01-20-turbo-frames-loading-spinner.md) - Display a loading spinner while a Turbo Frame is `busy` fetching content asynchronously
 - [Optimistic UI with Turbo 8 Morphs](2024-03-26-optimistic-ui-with-turbo-8-morphs.md) - Provide Optimistic UI updates using inline Turbo Stream Actions, and reconcile using Turbo 8 Morphs
 - [Turbo Drive - Use ULIDs for Optimistic UI](2024-08-13-turbo-drive-ulid.md) - Render deterministic optimistic UI elements using client-side ULIDs
+- [Turbo Frames - Form Submission Loading States](2026-03-10-turbo-frames-form-loading-states.md) - Add loading feedback to form submissions inside Turbo Frames using data-turbo-submits-with and the frame's busy attribute.
+- [Turbo Frames - Error Boundaries](2026-04-28-turbo-frames-error-boundaries.md) - Build a reusable Stimulus controller that catches Turbo Frame failures and shows fallback error states with retry.
+- [Turbo Drive - Shared Element View Transitions](2026-05-12-turbo-drive-shared-element-view-transitions.md) - Morph a gallery thumbnail into a full-size hero image across page navigations using the View Transitions API and Turbo Drive.

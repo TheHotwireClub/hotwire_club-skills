@@ -19,6 +19,9 @@ skills:
       - 2026-01-20-turbo-frames-loading-spinner.md
       - 2024-03-26-optimistic-ui-with-turbo-8-morphs.md
       - 2024-08-13-turbo-drive-ulid.md
+      - 2026-03-10-turbo-frames-form-loading-states.md
+      - 2026-04-28-turbo-frames-error-boundaries.md
+      - 2026-05-12-turbo-drive-shared-element-view-transitions.md
 
   forms-validation:
     name: "forms-validation"
@@ -34,7 +37,7 @@ skills:
       - 2026-02-03-turbo-frames-external-form.md
       - 2023-11-07-turbo-frames-typeahead-search.md
       - 2024-01-16-stimulus-action-parameters.md
-      - 2024-08-27-turbo-frames-flash.md
+      - 2026-03-24-turbo-frames-chained-selects.md
 
   navigation-content:
     name: "navigation-content"
@@ -69,6 +72,7 @@ skills:
       - 2025-06-10-turbo-streams-list-animation-view-transitions.md
       - 2024-03-12-hotwire-combobox-with-real-time-data.md
       - 2023-11-21-stimulus-inter-tab-communication.md
+      - 2026-04-14-turbo-streams-custom-stream-actions-push-state.md
 
   media-content:
     name: "media-content"

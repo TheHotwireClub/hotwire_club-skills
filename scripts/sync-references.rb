@@ -62,16 +62,25 @@ class SyncReferences
     skill_ref_dir = Pathname.new("skills/#{skill_dir_name}/references")
     FileUtils.mkdir_p(skill_ref_dir)
 
-    # Copy each article to the references directory
+    # Copy each article to the references directory.
+    #
+    # By default only NEW articles are copied. Already-synced references are
+    # left untouched because they carry post-sync normalization (frontmatter
+    # cleanup, Table of Contents, Pattern Cards) that a blind copy would clobber.
+    # Set FORCE_SYNC=1 to overwrite every reference with the raw corpus version.
+    force = ENV['FORCE_SYNC'] == '1'
+
     skill_data['articles'].each do |article_filename|
       source_file = @corpus_path / article_filename
       dest_file = skill_ref_dir / article_filename
 
-      if source_file.exist?
+      if !source_file.exist?
+        puts "  ✗ Warning: #{article_filename} not found in corpus"
+      elsif dest_file.exist? && !force
+        puts "  – Skipped #{article_filename} (already synced; normalization preserved)"
+      else
         FileUtils.cp(source_file, dest_file)
         puts "  ✓ Copied #{article_filename}"
-      else
-        puts "  ✗ Warning: #{article_filename} not found in corpus"
       end
     end
 
