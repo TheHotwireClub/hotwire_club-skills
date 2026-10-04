@@ -47,6 +47,18 @@ For references:
 - Ensure long reference docs (over 100 lines) include `## Table of Contents`
 - Keep migrated pattern sections (`## Pattern Card: ...`) when applicable
 - Remove stale references to deleted/unsupported articles
+- List every reference in the skill's `SKILL.md` under `Load References Selectively`
+
+### 3) Bump the plugin version
+
+Bump `version` in `.claude-plugin/plugin.json` whenever skills or references change;
+Claude Code only offers installed users an update when the version changes.
+Use a minor bump for new references or skills, a patch bump for fixes, then tag the
+release commit `vX.Y.Z`.
+
+Source articles live in `../Landing Page/collections/_posts`. A new post is converted
+into `corpus/` of `../hotwire_club-mcp` with the `Summarize Post` prompt in its
+`PROMPTS.md`, with the Patreon sample solution code pasted in, before step 1.
 
 ## Validation Checklist
 

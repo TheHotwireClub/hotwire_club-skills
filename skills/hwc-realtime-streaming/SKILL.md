@@ -34,6 +34,7 @@ Open only the file needed for the current request.
 - List animations with View Transitions: `references/2025-06-10-turbo-streams-list-animation-view-transitions.md`
 - Real-time combobox updates: `references/2024-03-12-hotwire-combobox-with-real-time-data.md`
 - Inter-tab communication patterns: `references/2023-11-21-stimulus-inter-tab-communication.md`
+- Custom stream action for history pushState: `references/2026-04-14-turbo-streams-custom-stream-actions-push-state.md`
 
 Use `references/INDEX.md` for the full catalog.
 

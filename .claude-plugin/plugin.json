@@ -1,7 +1,7 @@
 {
   "name": "hotwire-club-skills",
   "displayName": "Hotwire Club Skills",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Practical Hotwire skills for Rails developers: Turbo Drive, Turbo Frames, Turbo Streams, and Stimulus patterns sourced from The Hotwire Club articles.",
   "author": {
     "name": "Julian Rubisch",

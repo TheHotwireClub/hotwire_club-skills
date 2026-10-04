@@ -35,6 +35,7 @@ Open only the file needed for the current request.
 - Target callback orchestration: `references/2024-05-07-stimulus-target-callbacks.md`
 - Web Share API integration: `references/2025-11-25-stimulus-web-share-api.md`
 - Core Web Vitals and lazy-loading fundamentals: `references/2024-06-18-fundamentals-core-web-vitals.md`
+- Promise-returning outlet methods (await-able controller APIs): `references/2026-07-22-stimulus-promise-returning-outlet-methods.md`
 
 Use `references/INDEX.md` for the full catalog.
 

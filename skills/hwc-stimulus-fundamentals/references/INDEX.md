@@ -15,3 +15,4 @@ Master Stimulus controller patterns including lifecycle hooks, value callbacks, 
 - [Stimulus - Orchestrate Complex UI Changes with Target Callbacks](2024-05-07-stimulus-target-callbacks.md) - Use Stimulus target callbacks to dynamically update parts of your UI when targets are connected or disconnected
 - [Stimulus - Web Share API](2025-11-25-stimulus-web-share-api.md) - Use the native browser web sharing capabilities from Stimulus
 - [Frontend Fundamentals - Improve Core Web Vitals with Lazy Loading](2024-06-18-fundamentals-core-web-vitals.md) - Smartly use image lazy loading to improve core web vitals such as LCP and CLS
+- [Stimulus - Promise-Returning Outlet Methods](2026-07-22-stimulus-promise-returning-outlet-methods.md) - Turn a Stimulus controller into an await-able API by returning a promise from an outlet method and resolving it from a dialog's button handlers.

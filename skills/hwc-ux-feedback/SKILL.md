@@ -34,6 +34,10 @@ Open only the file needed for the current request.
 - Frame busy spinner patterns: `references/2026-01-20-turbo-frames-loading-spinner.md`
 - Optimistic UI with Turbo morph reconciliation: `references/2024-03-26-optimistic-ui-with-turbo-8-morphs.md`
 - ULID-based optimistic identity strategy: `references/2024-08-13-turbo-drive-ulid.md`
+- Form submission loading states: `references/2026-03-10-turbo-frames-form-loading-states.md`
+- Frame error boundaries and retry: `references/2026-04-28-turbo-frames-error-boundaries.md`
+- Shared element view transitions: `references/2026-05-12-turbo-drive-shared-element-view-transitions.md`
+- Optimistic toast notifications for auto-save: `references/2026-05-26-stimulus-optimistic-toast-auto-save.md`
 
 Use `references/INDEX.md` for the full catalog.
 

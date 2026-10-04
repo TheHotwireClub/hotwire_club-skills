@@ -22,6 +22,7 @@ skills:
       - 2026-03-10-turbo-frames-form-loading-states.md
       - 2026-04-28-turbo-frames-error-boundaries.md
       - 2026-05-12-turbo-drive-shared-element-view-transitions.md
+      - 2026-05-26-stimulus-optimistic-toast-auto-save.md
 
   forms-validation:
     name: "forms-validation"
@@ -105,3 +106,4 @@ skills:
       - 2024-05-07-stimulus-target-callbacks.md
       - 2025-11-25-stimulus-web-share-api.md
       - 2024-06-18-fundamentals-core-web-vitals.md
+      - 2026-07-22-stimulus-promise-returning-outlet-methods.md

@@ -33,6 +33,7 @@ Open only the file needed for the current request.
 - Typeahead validation with focus handling: `references/2025-10-20-turbo-frames-typeahead-validation.md`
 - External form controls in frames: `references/2026-02-03-turbo-frames-external-form.md`
 - Stimulus action parameters for forms: `references/2024-01-16-stimulus-action-parameters.md`
+- Dependent/chained select fields: `references/2026-03-24-turbo-frames-chained-selects.md`
 
 Use `references/INDEX.md` for the full catalog.
 
